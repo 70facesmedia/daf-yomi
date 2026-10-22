@@ -1326,11 +1326,69 @@ body:has(.dy-hub) .m-content__header { display: none; }
     if (s.next) setText(hub, '[data-dy="next"]', 'Next · ' + fmtShort(s.next.startDate));
   }
 
+  /* Study opportunities: dates editors type ("Nov 12") drive the list.
+     Past events hide themselves, anything that says it happens on
+     "Thursdays" (or any weekday) rolls forward to the next one, and the
+     rest stay in date order. */
+  var WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  function parseEventDate(text, today) {
+    var m = /([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2})/.exec(text || '');
+    if (!m) return null;
+    var month = MONTHS.indexOf(m[1].charAt(0).toUpperCase() + m[1].slice(1, 3).toLowerCase());
+    if (month === -1) return null;
+    var d = new Date(today.getFullYear(), month, parseInt(m[2], 10));
+    // "Jan 5" typed in December means next January
+    if (d < today - 180 * 86400000) d.setFullYear(d.getFullYear() + 1);
+    return d;
+  }
+
+  function weeklyDay(text) {
+    for (var i = 0; i < WEEKDAYS.length; i++) {
+      if (text.indexOf(WEEKDAYS[i] + 's') !== -1) return i;
+    }
+    return -1;
+  }
+
+  function initEventDates(hub, today) {
+    var events = Array.prototype.slice.call(hub.querySelectorAll('.upcoming-event'));
+    if (!events.length) return;
+    var upcoming = [];
+    events.forEach(function (ev, i) {
+      var dateEl = ev.querySelector('.upcoming-date');
+      var weekday = weeklyDay(ev.textContent);
+      var when;
+      if (weekday !== -1) {
+        when = new Date(today);
+        when.setDate(today.getDate() + (weekday - today.getDay() + 7) % 7);
+        if (dateEl) dateEl.textContent = fmtShort(when);
+      } else {
+        when = parseEventDate(dateEl ? dateEl.textContent : '', today);
+      }
+      if (when) if (when < today) { ev.style.display = 'none'; return; }
+      upcoming.push({ ev: ev, when: when, i: i });
+    });
+    if (!upcoming.length) {
+      var box = hub.querySelector('.upcoming');
+      if (box) box.style.display = 'none';
+      return;
+    }
+    // Earliest first; events without a readable date keep their place at the end
+    upcoming.sort(function (a, b) {
+      if (!a.when) return b.when ? 1 : a.i - b.i;
+      if (!b.when) return -1;
+      return (a.when - b.when) || (a.i - b.i);
+    });
+    var parent = events[0].parentNode;
+    upcoming.forEach(function (u) { parent.appendChild(u.ev); });
+  }
+
   /* Study opportunities: rotating page scan + per-row hover scans */
   function initUpcoming(hub) {
     var box = hub.querySelector('.upcoming');
     if (!box) return;
     box.querySelectorAll('.upcoming-event').forEach(function (ev, i) {
+      if (ev.style.display === 'none') return;
       var bg = document.createElement('div');
       bg.className = 'upcoming-event-bg';
       bg.style.backgroundImage = "url('" + IMG_BASE + DAF_IMAGES[(i + 3) % DAF_IMAGES.length] + "')";
@@ -1445,6 +1503,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
     var s = todayState();
     renderToday(hub, s);
     renderShelf(hub, s);
+    initEventDates(hub, s.today);
     initUpcoming(hub);
     initSages(hub);
   }

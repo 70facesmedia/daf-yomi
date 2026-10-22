@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daf Yomi · WordPress preview</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/lora@5.0.0/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.0/600.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/montserrat@5.0.0/700.css">
+<link rel="icon" type="image/png" href="images/mjl-favicon.png">
+<style>
+  body { margin: 0; background: #FAFAF7; }
+  .wp-shell-header { background: #1D2936; color: #fff; padding: 16px 20px; font: italic 600 22px 'Lora Variable', Georgia, serif; }
+  .wp-shell-header span { display: block; max-width: 900px; margin: 0 auto; }
+  .wp-shell-note { max-width: 900px; margin: 0 auto; padding: 10px 20px; font: 12px/1.4 'Montserrat', sans-serif; color: rgba(29,41,54,0.6); }
+  .wp-shell-main { padding: 12px 20px 48px; }
+  @media (max-width: 600px) { .wp-shell-main { padding: 8px 16px 32px; } }
+</style>
+</head>
+<body>
+<header class="wp-shell-header"><span>My Jewish Learning</span></header>
+<p class="wp-shell-note">Preview of the WordPress version: the exact block markup that gets pasted into WordPress.</p>
+<main class="wp-shell-main">
+<!-- wp:group {"className":"dy-hub"} -->
+<div class="wp-block-group dy-hub"><!-- wp:html -->
+<style>
+/* ================================================================
+   Daf Yomi Hub — WordPress styles
+   Everything is scoped under .dy-hub so it can't leak into the MJL
+   theme. Fonts fall back from the theme's own variables
+   (--f-primary = Chaparral, --f-secondary = Brandon) to Lora/Montserrat.
+   ================================================================ */
+
+.dy-hub {
+  --dy-serif: var(--f-primary, 'Lora Variable', 'Lora', Georgia, serif);
+  --dy-sans: var(--f-secondary, 'Montserrat', 'Helvetica Neue', Arial, sans-serif);
+  --dy-navy: #1D2936;
+  --dy-cyan: #3FC6F3;
+  --dy-cyan-dark: #2BAEDB;
+  --dy-ice: #E8F8FE;
+  --dy-line: rgba(29,41,54,0.12);
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--dy-navy);
+  font-family: var(--dy-serif);
+  -webkit-font-smoothing: antialiased;
+}
+.dy-hub *, .dy-hub *::before, .dy-hub *::after { box-sizing: border-box; }
+
+/* Neutralise theme + block-editor spacing so our own margins rule */
+.dy-hub :where(.wp-block-group) > * { margin-block-start: 0; margin-block-end: 0; }
+.dy-hub p, .dy-hub h1, .dy-hub h2, .dy-hub h3, .dy-hub figure { margin: 0; padding: 0; }
+.dy-hub h1, .dy-hub h2, .dy-hub h3 { font-family: var(--dy-serif); color: var(--dy-navy); text-transform: none; letter-spacing: normal; }
+.dy-hub a { color: inherit; text-decoration: none; box-shadow: none; border: 0; }
+.dy-hub a:hover { color: var(--dy-cyan); }
+.dy-hub img { max-width: 100%; height: auto; display: block; }
+
+/* TYPOGRAPHY */
+.dy-hub .eyebrow {
+  font-family: var(--dy-sans); font-size: 13px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--dy-cyan); font-weight: 700; margin-bottom: 8px;
+}
+.dy-hub .eyebrow-c, .dy-hub .h-center { text-align: center; }
+.dy-hub .h-title {
+  font-size: 34px; line-height: 1.1; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01em;
+}
+.dy-hub .h-title.h-center { font-size: 28px; }
+.dy-hub .hero-headline { font-size: 38px; margin-bottom: 14px; }
+.dy-hub .hero-intro {
+  font-size: 18px; line-height: 1.6; color: rgba(29,41,54,0.88); margin: 0 0 1.75rem;
+}
+.dy-hub .daf-today {
+  font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; line-height: 1.2;
+}
+.dy-hub .h-sub {
+  font-size: 17px; font-style: italic; opacity: 0.7; margin: 0 0 1.25rem; line-height: 1.5;
+}
+.dy-hub .section-h {
+  font-family: var(--dy-sans); font-size: 12px; text-transform: uppercase; letter-spacing: 2.5px;
+  color: rgba(29,41,54,0.6); font-weight: 700; margin: 0 0 8px;
+}
+.dy-hub .section-title { font-size: 26px; font-weight: 600; margin: 0 0 4px; line-height: 1.2; }
+.dy-hub .section-sub {
+  font-size: 15px; font-style: italic; color: rgba(29,41,54,0.6); margin: 0 0 1.25rem;
+}
+.dy-hub .section-h.spaced { margin-top: 1.5rem; }
+.dy-hub hr.sec-divider {
+  border: 0; height: 1px; background: rgba(29,41,54,0.1); margin: 2.5rem 0 2rem; opacity: 1; width: 100%; max-width: none;
+}
+
+/* CARDS */
+.dy-hub .card {
+  background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 1.75rem; margin-bottom: 1rem;
+}
+
+/* HERO COUNTER */
+.dy-hub .dy-today .eyebrow { margin-bottom: 6px; }
+.dy-hub .bar {
+  height: 8px; background: rgba(29,41,54,0.08); border-radius: 4px; overflow: hidden; margin: 10px 0 4px;
+}
+.dy-hub .bar-fill { height: 100%; background: var(--dy-cyan); width: 0; transition: width 0.6s ease; }
+.dy-hub .timeline-row {
+  font-family: var(--dy-sans); display: flex; justify-content: space-between; font-size: 11px;
+  color: rgba(29,41,54,0.55); margin-bottom: 1.25rem; letter-spacing: 0.5px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+/* BUTTONS (WordPress button block) */
+.dy-hub .wp-block-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin: 0; }
+.dy-hub .wp-block-button { margin: 0; }
+.dy-hub .wp-block-button__link {
+  display: inline-block; padding: 12px 22px; border-radius: 2px; background: var(--dy-cyan);
+  color: #fff; font-family: var(--dy-sans); font-weight: 700; font-size: 13px; line-height: 1.4;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none;
+}
+.dy-hub .wp-block-button__link:hover { background: var(--dy-cyan-dark); color: #fff; }
+
+/* NEW TO THE TALMUD */
+.dy-hub .why {
+  background: var(--dy-ice); border-radius: 4px; padding: 1.5rem 1.75rem; margin: 0 0 1rem;
+}
+.dy-hub .why-eye {
+  font-family: var(--dy-sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(29,41,54,0.55); font-weight: 700; margin-bottom: 6px;
+}
+.dy-hub .why-h { font-size: 24px; font-weight: 600; margin: 0 0 12px; line-height: 1.2; }
+.dy-hub .why-body {
+  font-size: 16px; line-height: 1.65; color: rgba(29,41,54,0.85); margin: 0 0 1.25rem;
+}
+
+/* STUDY OPPORTUNITIES */
+.dy-hub .upcoming {
+  background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 1.5rem 1.75rem; margin: 0 0 1rem; position: relative; overflow: hidden;
+}
+.dy-hub .upcoming > * { position: relative; z-index: 1; }
+.dy-hub .upcoming > .upcoming-bg {
+  position: absolute; top: 0; bottom: 0; right: 0; width: 55%;
+  background-size: cover; background-position: center; opacity: 0;
+  filter: sepia(0.2) brightness(0.92);
+  animation: dy-kenburns 24s ease-in-out infinite alternate;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  transition: opacity 1.6s ease; z-index: 0; pointer-events: none;
+}
+.dy-hub .upcoming.in-view > .upcoming-bg { opacity: 0.28; }
+@keyframes dy-kenburns {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.12) translate(-3%, -2%); }
+}
+.dy-hub .upcoming-eye {
+  font-family: var(--dy-sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(29,41,54,0.55); font-weight: 700; margin-bottom: 6px;
+}
+.dy-hub .upcoming-title { font-size: 22px; font-weight: 600; margin: 0 0 1.25rem; line-height: 1.2; }
+.dy-hub .upcoming-event {
+  position: relative; overflow: hidden; border-radius: 3px;
+  padding: 0.75rem 0.5rem 0.75rem 5rem; margin: 0 -0.5rem;
+  border-top: 0.5px solid rgba(29,41,54,0.1);
+}
+.dy-hub .upcoming-event-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  opacity: 0; filter: sepia(0.4) brightness(0.88); transition: opacity 0.45s ease;
+  z-index: 0; pointer-events: none;
+}
+.dy-hub .upcoming-event:hover .upcoming-event-bg { opacity: 0.2; }
+.dy-hub .upcoming-event .upcoming-type { position: relative; z-index: 1; }
+.dy-hub .upcoming-event .upcoming-date {
+  position: absolute; left: 0.5rem; top: 0.95rem; z-index: 1;
+  font-family: var(--dy-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--dy-cyan);
+}
+.dy-hub .upcoming-type {
+  font-family: var(--dy-sans); font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: rgba(29,41,54,0.45); margin-bottom: 3px;
+}
+.dy-hub .upcoming-name { font-size: 14px; line-height: 1.35; color: rgba(29,41,54,0.85); }
+.dy-hub .upcoming-event:hover .upcoming-name { color: var(--dy-cyan); }
+/* Whole row is clickable via the title link */
+.dy-hub .upcoming-name a::after { content: ''; position: absolute; inset: 0; z-index: 2; }
+
+/* BOOKSHELF */
+.dy-hub .room {
+  background: #F4EFE6; border-radius: 4px; padding: 1.75rem 1rem 1rem;
+  border: 0.5px solid rgba(29,41,54,0.1); margin: 1.25rem 0 1rem;
+}
+.dy-hub .shelf-row {
+  display: flex; align-items: flex-end; justify-content: center; gap: 1px; height: 160px; padding: 0 8px;
+}
+.dy-hub .shelf-floor {
+  height: 14px; background: #8B6F4A; border-top: 1px solid #A88A66;
+  border-bottom: 1px solid #5C4622; margin-bottom: 14px;
+}
+.dy-hub .book {
+  position: relative; height: 130px; cursor: pointer; transition: transform 0.25s ease;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.04); border-left: 1px solid rgba(0,0,0,0.35);
+}
+.dy-hub .book::before, .dy-hub .book::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 2px; background: #C9A864;
+}
+.dy-hub .book::before { top: 14px; }
+.dy-hub .book::after { bottom: 14px; }
+.dy-hub .book-spine {
+  writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.6px; color: #E8DCC4; text-transform: uppercase; white-space: nowrap;
+  padding: 8px 0; font-family: var(--dy-serif);
+}
+.dy-hub .book:hover { transform: translateY(-10px); z-index: 10; }
+.dy-hub .b-navy { background: #1D2936; }
+.dy-hub .b-wine { background: #3D1F2A; }
+.dy-hub .b-forest { background: #1F3527; }
+.dy-hub .b-amber { background: #3D2B17; }
+.dy-hub .b-done { opacity: 0.5; }
+.dy-hub .b-cur {
+  transform: translateY(-26px) rotate(-3deg); z-index: 6;
+  box-shadow: 0 0 0 2px var(--dy-cyan), 0 12px 18px rgba(0,0,0,0.18);
+}
+.dy-hub .b-cur::before, .dy-hub .b-cur::after { background: var(--dy-cyan); height: 3px; }
+.dy-hub .b-cur .book-spine { color: #fff; font-size: 10px; }
+.dy-hub .b-cur:hover { transform: translateY(-34px) rotate(-3deg); }
+.dy-hub .b-next {
+  transform: rotate(8deg); transform-origin: bottom left; z-index: 5; margin-left: 4px;
+  box-shadow: 3px 6px 14px rgba(0,0,0,0.18);
+}
+.dy-hub .b-next::before, .dy-hub .b-next::after { background: var(--dy-cyan); }
+.dy-hub .b-next .book-spine { color: var(--dy-cyan); }
+.dy-hub .next-flag {
+  position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+  background: var(--dy-cyan); color: #fff; font-family: var(--dy-sans); font-size: 9px;
+  font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; padding: 4px 9px;
+  border-radius: 1px; white-space: nowrap; pointer-events: none;
+}
+.dy-hub .legend {
+  display: flex; gap: 18px; font-family: var(--dy-sans); font-size: 10px; color: rgba(29,41,54,0.7);
+  flex-wrap: wrap; letter-spacing: 1.2px; font-weight: 600; text-transform: uppercase;
+  justify-content: center; margin: 0.5rem 0 0.25rem; align-items: center;
+}
+.dy-hub .legend-swatch {
+  display: inline-block; width: 8px; height: 14px; margin-right: 6px; vertical-align: middle;
+  background: var(--dy-navy);
+}
+.dy-hub .legend-swatch.cur { box-shadow: 0 0 0 1.5px var(--dy-cyan); }
+.dy-hub .legend-swatch.next { border: 1.5px solid var(--dy-cyan); }
+.dy-hub .legend-swatch.done { opacity: 0.4; }
+
+/* TEACHERS + SAGES */
+.dy-hub .scroll-row {
+  display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 14px; scroll-snap-type: x mandatory;
+}
+.dy-hub .scroll-row::-webkit-scrollbar { height: 6px; }
+.dy-hub .scroll-row::-webkit-scrollbar-thumb { background: rgba(29,41,54,0.2); border-radius: 3px; }
+.dy-hub .person {
+  position: relative; flex: 0 0 auto; width: 170px; background: #fff;
+  border: 0.5px solid var(--dy-line); border-radius: 4px; padding: 1rem;
+  scroll-snap-align: start; transition: border-color 0.2s;
+}
+.dy-hub .person:hover, .dy-hub .person:focus-visible { border-color: var(--dy-cyan); outline: none; }
+.dy-hub .person.sage { cursor: pointer; }
+.dy-hub .avatar {
+  width: 64px; height: 64px; border-radius: 50%; overflow: hidden; margin: 0 0 10px;
+  border: 0.5px solid rgba(29,41,54,0.1);
+}
+.dy-hub .avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: sepia(0.15);
+}
+.dy-hub .person-name { font-size: 15px; font-weight: 600; margin: 0 0 3px; line-height: 1.2; }
+.dy-hub .person-name a::after { content: ''; position: absolute; inset: 0; }
+.dy-hub .person-meta {
+  font-family: var(--dy-sans); font-size: 10px; color: rgba(29,41,54,0.55); text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; line-height: 1.4;
+}
+.dy-hub .person-daf {
+  font-family: var(--dy-sans); font-size: 9px; color: rgba(29,41,54,0.4); text-transform: uppercase;
+  letter-spacing: 0.8px; font-weight: 600; margin-bottom: 5px;
+}
+.dy-hub .person-bio { font-size: 12px; line-height: 1.4; color: rgba(29,41,54,0.7); }
+/* Pop-up text lives on the page for editors + search, shown in the modal */
+.dy-hub .sage-details { display: none; }
+
+/* REFERENCE LIBRARY */
+.dy-hub .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.dy-hub .ref, .dy-hub .way {
+  position: relative; background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 1rem; transition: border-color 0.2s, transform 0.15s;
+}
+.dy-hub .ref:hover, .dy-hub .way:hover { border-color: var(--dy-cyan); transform: translateY(-1px); }
+.dy-hub .ref-title { font-size: 15px; font-weight: 600; margin: 0 0 4px; line-height: 1.3; }
+.dy-hub .ref-title a::after, .dy-hub .way-title a::after { content: ''; position: absolute; inset: 0; }
+.dy-hub .ref-desc { font-size: 12px; line-height: 1.4; color: rgba(29,41,54,0.7); }
+
+/* WAYS TO ENGAGE */
+.dy-hub .ways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.dy-hub .way { padding: 1.25rem 1.25rem 1.25rem 4.25rem; }
+.dy-hub .way.feat { border-left: 3px solid var(--dy-cyan); }
+.dy-hub .way.way-full { grid-column: 1 / -1; }
+.dy-hub .way-ico {
+  position: absolute; left: 1.25rem; top: 1.25rem; width: 36px; height: 36px;
+  background: var(--dy-ice); border-radius: 4px; display: flex; align-items: center;
+  justify-content: center; font-family: 'Libre Baskerville', Georgia, serif; font-size: 20px;
+  font-style: italic;
+}
+.dy-hub .way-eye {
+  font-family: var(--dy-sans); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(29,41,54,0.55); font-weight: 700; margin-bottom: 4px;
+}
+.dy-hub .way-title { font-size: 17px; font-weight: 600; margin: 0 0 4px; line-height: 1.25; }
+.dy-hub .way-desc { font-size: 13px; line-height: 1.45; color: rgba(29,41,54,0.7); }
+
+/* FAQ (WordPress details block) */
+.dy-hub .faq {
+  background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 0.5rem 1.5rem; margin-bottom: 1rem;
+}
+.dy-hub .faq details { padding: 1rem 0; border-bottom: 0.5px solid rgba(29,41,54,0.1); }
+.dy-hub .faq details:last-child { border-bottom: none; }
+.dy-hub .faq summary {
+  font-size: 16px; font-weight: 600; cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.dy-hub .faq summary::-webkit-details-marker { display: none; }
+.dy-hub .faq summary::after { content: '+'; font-family: var(--dy-sans); font-size: 20px; color: var(--dy-cyan); }
+.dy-hub .faq details[open] summary::after { content: '\2212'; }
+.dy-hub .faq details p { font-size: 14px; line-height: 1.6; color: rgba(29,41,54,0.8); margin: 10px 0 0; }
+
+/* SAGE MODAL (built by the script, appended to <body>) */
+.dy-sage-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(10,15,20,0.72); z-index: 100000;
+  align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px);
+  font-family: var(--f-primary, 'Lora Variable', 'Lora', Georgia, serif);
+}
+.dy-sage-overlay.is-open { display: flex; }
+.dy-sage-overlay * { box-sizing: border-box; }
+.dy-sage-overlay .sage-card {
+  background: #F9F3E3; border: 2px solid #C9A864; border-radius: 3px; max-width: 520px; width: 100%;
+  max-height: 90vh; overflow-y: auto; position: relative;
+  box-shadow: 0 0 0 8px rgba(201,168,100,0.12), 0 28px 64px rgba(0,0,0,0.5);
+}
+.dy-sage-overlay .sage-close {
+  position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.45); border: none; color: #fff;
+  font-size: 14px; width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; z-index: 10; line-height: 1; padding: 0;
+}
+.dy-sage-overlay .sage-close:hover { background: rgba(0,0,0,0.65); }
+.dy-sage-overlay .sage-portrait { position: relative; height: 210px; overflow: hidden; }
+.dy-sage-overlay .sage-portrait img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  filter: sepia(0.45) brightness(0.82); display: block; max-width: none;
+}
+.dy-sage-overlay .sage-portrait-fade {
+  position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 35%, rgba(12,8,3,0.78) 100%);
+}
+.dy-sage-overlay .sage-portrait-name { position: absolute; bottom: 1rem; left: 1.5rem; right: 3rem; }
+.dy-sage-overlay .sage-card-name { font-size: 30px; font-weight: 600; color: #fff; line-height: 1.1; }
+.dy-sage-overlay .sage-card-era,
+.dy-sage-overlay .sage-label {
+  font-family: var(--f-secondary, 'Montserrat', sans-serif); text-transform: uppercase; font-weight: 700;
+}
+.dy-sage-overlay .sage-card-era { font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 1.8px; margin-top: 5px; }
+.dy-sage-overlay .sage-body { padding: 1.5rem; }
+.dy-sage-overlay .sage-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid rgba(201,168,100,0.4);
+}
+.dy-sage-overlay .sage-field-full { grid-column: 1 / -1; }
+.dy-sage-overlay .sage-label { font-size: 9px; letter-spacing: 2px; color: #9B7A2A; margin-bottom: 4px; }
+.dy-sage-overlay .sage-value { font-size: 14px; color: #2A1F0E; line-height: 1.45; }
+.dy-sage-overlay .sage-teaching {
+  margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(201,168,100,0.4);
+}
+.dy-sage-overlay .sage-quote {
+  font-size: 15px; font-style: italic; color: #2A1F0E; line-height: 1.65; margin: 6px 0 0;
+  padding-left: 1rem; border-left: 2px solid #C9A864;
+}
+.dy-sage-overlay .sage-tip {
+  background: rgba(201,168,100,0.1); border: 1px solid rgba(201,168,100,0.35); border-radius: 2px;
+  padding: 0.85rem 1rem;
+}
+.dy-sage-overlay .sage-tip .sage-value { font-size: 13px; color: rgba(42,31,14,0.85); }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .dy-hub .card, .dy-hub .why, .dy-hub .upcoming { padding: 1.25rem; }
+  .dy-hub .h-title { font-size: 26px; }
+  .dy-hub .hero-headline { font-size: 30px; }
+  .dy-hub .h-title.h-center { font-size: 22px; }
+  .dy-hub .section-title { font-size: 22px; }
+  .dy-hub .why-h { font-size: 20px; }
+  .dy-hub .ways-grid, .dy-hub .ref-grid { grid-template-columns: 1fr; }
+  .dy-hub .way.way-full { grid-column: 1; }
+  .dy-hub .wp-block-button__link { padding: 10px 16px; font-size: 12px; letter-spacing: 1.5px; }
+  .dy-hub .shelf-row { height: 140px; }
+  .dy-hub .book { height: 110px; flex-shrink: 1; min-width: 12px; }
+  .dy-hub .book-spine { font-size: 7px; letter-spacing: 0; padding: 4px 0; }
+  .dy-sage-overlay { padding: 12px; align-items: flex-end; }
+  .dy-sage-overlay .sage-card { max-height: 92vh; border-radius: 6px 6px 0 0; }
+  .dy-sage-overlay .sage-portrait { height: 170px; }
+  .dy-sage-overlay .sage-card-name { font-size: 24px; }
+  .dy-sage-overlay .sage-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+  .dy-sage-overlay .sage-field-full { grid-column: 1; }
+  .dy-sage-overlay .sage-body { padding: 1.25rem; }
+  .dy-sage-overlay .sage-quote { font-size: 14px; }
+}
+</style>
+<!-- /wp:html -->
+
+<!-- wp:group {"className":"card hero"} -->
+<div class="wp-block-group card hero"><!-- wp:heading {"level":1,"className":"h-title hero-headline"} -->
+<h1 class="wp-block-heading h-title hero-headline">Study Talmud every day with My Jewish Learning</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"hero-intro"} -->
+<p class="hero-intro">Daf Yomi means “a page a day.” Jews around the world study the same page of the Talmud each morning — moving through all 2,711 pages over about seven and a half years, then starting again. More than 100,000 people are following along right now.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="dy-today">
+  <div class="eyebrow" data-dy="eyebrow">Today on Daf Yomi</div>
+  <div class="daf-today" data-dy="title"></div>
+  <p class="h-sub" data-dy="sub"></p>
+  <div class="bar"><div class="bar-fill"></div></div>
+  <div class="timeline-row"><span>Jan 5, 2020</span><span data-dy="pct"></span><span>Jun 7, 2027</span></div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"dy-read-today"} -->
+<div class="wp-block-button dy-read-today"><a class="wp-block-button__link wp-element-button" href="https://www.myjewishlearning.com/category/study/jewish-texts/talmud/">Read Today’s Dose</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"why"} -->
+<div class="wp-block-group why"><!-- wp:paragraph {"className":"why-eye"} -->
+<p class="why-eye">New to the Talmud?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"why-h"} -->
+<h2 class="wp-block-heading why-h">The bedrock of Jewish thought</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"why-body"} -->
+<p class="why-body">The Talmud is a vast, 1,500-year-old record of rabbis debating how to live a Jewish life — the source nearly every prayer, holiday, and ritual traces back to. Each page has two layers: a short statement of law called the <em>Mishnah</em>, wrapped in the <em>Gemara</em>, generations of discussion teasing out what it means. You don’t need Hebrew, Aramaic, or any background — every page comes explained in plain English.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"dy-subscribe"} -->
+<div class="wp-block-button dy-subscribe"><a class="wp-block-button__link wp-element-button" href="https://www.myjewishlearning.com/get-your-daily-dose-of-talmud/">Subscribe — it’s free</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"upcoming"} -->
+<div class="wp-block-group upcoming"><!-- wp:paragraph {"className":"upcoming-eye"} -->
+<p class="upcoming-eye">What’s coming up</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"upcoming-title"} -->
+<h2 class="wp-block-heading upcoming-title">Study opportunities</h2>
+<!-- /wp:heading -->
+
+<!-- wp:group {"className":"upcoming-event"} -->
+<div class="wp-block-group upcoming-event"><!-- wp:paragraph {"className":"upcoming-date"} -->
+<p class="upcoming-date">Oct 29</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"upcoming-type"} -->
+<p class="upcoming-type">Week in Review · Zoom</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"upcoming-name"} -->
+<p class="upcoming-name"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeM09B8nrxRVTwZk7Do-VammeDzMNimev6MqXLDOInFhuc2eQ/viewform">Weekly recap — Thursdays 9:30 AM ET</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"upcoming-event"} -->
+<div class="wp-block-group upcoming-event"><!-- wp:paragraph {"className":"upcoming-date"} -->
+<p class="upcoming-date">Nov 12</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"upcoming-type"} -->
+<p class="upcoming-type">Off the Daf · Book Club</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"upcoming-name"} -->
+<p class="upcoming-name"><a href="https://www.myjewishlearning.com/off-the-daf-a-talmud-book-club/">Live author conversation — <em>The Garden and the Workshop</em></a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"upcoming-event"} -->
+<div class="wp-block-group upcoming-event"><!-- wp:paragraph {"className":"upcoming-date"} -->
+<p class="upcoming-date">Nov 18</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"upcoming-type"} -->
+<p class="upcoming-type">Siyyum · Completion Celebration</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"upcoming-name"} -->
+<p class="upcoming-name"><a href="https://www.myjewishlearning.com/get-your-daily-dose-of-talmud/">Tractate Bekhorot — join the global celebration</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:separator {"className":"sec-divider"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity sec-divider"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"className":"eyebrow eyebrow-c"} -->
+<p class="eyebrow eyebrow-c">The 14th cycle · 37 volumes</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"h-title h-center"} -->
+<h2 class="wp-block-heading h-title h-center">The Talmud, on a shelf</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"h-sub h-center"} -->
+<p class="h-sub h-center">Pull any volume down to read its archive of Daily Doses</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:html -->
+<div class="room">
+  <div class="shelf-row"></div><div class="shelf-floor"></div>
+  <div class="shelf-row"></div><div class="shelf-floor"></div>
+  <div class="shelf-row"></div><div class="shelf-floor"></div>
+  <div class="legend">
+    <span><span class="legend-swatch done"></span>Read</span>
+    <span><span class="legend-swatch cur"></span>Reading now</span>
+    <span><span class="legend-swatch next"></span><span data-dy="next">Next</span></span>
+    <span><span class="legend-swatch"></span>Upcoming</span>
+  </div>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:separator {"className":"sec-divider"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity sec-divider"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"className":"section-h"} -->
+<p class="section-h">The voices behind the project</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"section-title"} -->
+<h2 class="wp-block-heading section-title">Meet your teachers</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"section-sub"} -->
+<p class="section-sub">A rotating team of rabbis, scholars, and writers craft each Daily Dose.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"scroll-row"} -->
+<div class="wp-block-group scroll-row"><!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/rachel%20scheinerman.avif" alt="Dr. Rachel Scheinerman"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rscheinerman/" target="_blank" rel="noreferrer noopener">Dr. Rachel Scheinerman</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">Editor in Chief</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Founded the Daily Dose project. PhD in rabbinic literature.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Sara%20Ronis.jpg" alt="Dr. Sara Ronis"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/sara-ronis/" target="_blank" rel="noreferrer noopener">Dr. Sara Ronis</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">Contributing Writer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Rabbi and educator. Writes on ritual, gender, and law.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/RabbI-Elli-Fischer.jpg" alt="Dr. Elli Fischer"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://telaviv.academia.edu/ElliFischer" target="_blank" rel="noreferrer noopener">Dr. Elli Fischer</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">Contributing Writer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Translator and historian of halakhah.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Rabbi%20Jay%20Kelman.png" alt="Rabbi Jay Kelman"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://torahinmotion.org/profile/rabbi-jay-kelman" target="_blank" rel="noreferrer noopener">Rabbi Jay Kelman</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">Contributing Writer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Author and Talmud teacher of 30+ years.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Ilana%20Kurshan.jpg" alt="Ilana Kurshan"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/ilana-kurshan/" target="_blank" rel="noreferrer noopener">Ilana Kurshan</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">Contributing Writer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Author of <em>If All the Seas Were Ink</em>, a Daf Yomi memoir.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Joshua%20Heller.jpg" alt="Rabbi Joshua Heller"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-joshua-heller/" target="_blank" rel="noreferrer noopener">Rabbi Joshua Heller</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">Contributing Writer</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Conservative rabbi writing on contemporary halakhah.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph {"className":"section-h spaced"} -->
+<p class="section-h spaced">From inside the text</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"section-title"} -->
+<h2 class="wp-block-heading section-title">Meet the sages</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"section-sub"} -->
+<p class="section-sub">The rabbis you’ll encounter on every page — tap one for a quick primer on who they are and why they matter.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"scroll-row"} -->
+<div class="wp-block-group scroll-row"><!-- wp:group {"className":"person sage"} -->
+<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/brakhot_2a.jpg" alt="Vilna Shas, Berakhot 2a"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Rashi</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">1040–1105 · France</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-daf"} -->
+<p class="person-daf">Daf: Berakhot 2a</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">The most influential Talmud commentator. His commentary appears on every page.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sage-details"} -->
+<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
+<p class="sd-period"><strong>Period:</strong> Rishon · 11th–12th century</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-basedin"} -->
+<p class="sd-basedin"><strong>Based in:</strong> Troyes, France</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-knownfor"} -->
+<p class="sd-knownfor"><strong>Known for:</strong> Line-by-line commentary that made the Talmud accessible to all — printed on every page ever since</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-debates"} -->
+<p class="sd-debates"><strong>Debates with:</strong> The Tosafists — his own grandsons and students, who challenge him in the outer column</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-teaching"} -->
+<p class="sd-teaching"><strong>A teaching:</strong> Rashi never assumed his reader already knew. He explained everything, from the simplest word to the most tangled legal argument. That radical clarity is his legacy.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-onpage"} -->
+<p class="sd-onpage"><strong>On the page:</strong> The narrow inner column on every page is always Rashi. The distinctive slanted typeface — “Rashi script” — was named for him. Once you recognize it, you’ll never miss him.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person sage"} -->
+<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/brakhot_61b.jpg" alt="Vilna Shas, Berakhot 61b"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Rabbi Akiva</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">c. 50–135 CE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-daf"} -->
+<p class="person-daf">Daf: Berakhot 61b</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Shepherd turned sage. Foundational figure of rabbinic Judaism.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sage-details"} -->
+<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
+<p class="sd-period"><strong>Period:</strong> Tanna · 3rd generation</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-basedin"} -->
+<p class="sd-basedin"><strong>Based in:</strong> Bnei Brak, Israel</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-knownfor"} -->
+<p class="sd-knownfor"><strong>Known for:</strong> Deriving new laws from every letter and ornament of the Torah; martyrdom under Rome</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-debates"} -->
+<p class="sd-debates"><strong>Debates with:</strong> Rabbi Ishmael, who argued Akiva read too much into the text</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-teaching"} -->
+<p class="sd-teaching"><strong>A teaching:</strong> “Love your neighbor as yourself — this is the great principle of the entire Torah.” (Yerushalmi Nedarim 9:4)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-onpage"} -->
+<p class="sd-onpage"><strong>On the page:</strong> Scholars say the anonymous Mishnah — the passages with no named author — follows Rabbi Akiva’s view. When the Mishnah speaks without attribution, it’s likely his voice.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person sage"} -->
+<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/chabbath_31a.jpg" alt="Vilna Shas, Shabbat 31a"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Hillel</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">c. 110 BCE–10 CE</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-daf"} -->
+<p class="person-daf">Daf: Shabbat 31a</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Famous for the Golden Rule. School of Hillel shaped halakhah.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sage-details"} -->
+<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
+<p class="sd-period"><strong>Period:</strong> Tanna · Zugot (paired) era</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-basedin"} -->
+<p class="sd-basedin"><strong>Based in:</strong> Jerusalem</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-knownfor"} -->
+<p class="sd-knownfor"><strong>Known for:</strong> Legal leniency and ethical clarity; founding the School of Hillel that shaped mainstream Jewish law</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-debates"} -->
+<p class="sd-debates"><strong>Debates with:</strong> Shammai — the two are paired on nearly every disputed question in the Mishnah</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-teaching"} -->
+<p class="sd-teaching"><strong>A teaching:</strong> “What is hateful to you, do not do to your neighbor. That is the whole Torah — the rest is commentary. Go and learn.” (Shabbat 31a)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-onpage"} -->
+<p class="sd-onpage"><strong>On the page:</strong> “Beit Hillel says… Beit Shammai says…” appears hundreds of times in the Talmud. The law almost always follows Hillel. When it follows Shammai, it’s worth pausing to ask why.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person sage"} -->
+<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/baba-metsia_59b.jpg" alt="Vilna Shas, Bava Metzia 59b"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Rava</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">c. 280–352 · Babylon</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-daf"} -->
+<p class="person-daf">Daf: Bava Metzia 59b</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Towering Babylonian sage. His debates with Abaye fill the Talmud.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sage-details"} -->
+<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
+<p class="sd-period"><strong>Period:</strong> Amora · 4th generation (Babylonian)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-basedin"} -->
+<p class="sd-basedin"><strong>Based in:</strong> Machoza, Babylon</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-knownfor"} -->
+<p class="sd-knownfor"><strong>Known for:</strong> Civil and criminal law; his running debate with Abaye is the defining intellectual rivalry of the Talmud</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-debates"} -->
+<p class="sd-debates"><strong>Debates with:</strong> Abaye — the law follows Rava in all but six of their disputes. The six exceptions are memorized by a special mnemonic.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-teaching"} -->
+<p class="sd-teaching"><strong>A teaching:</strong> “A person should always live in the same city as their teacher.” He modeled this himself, remaining in Machoza to study under Rav Yosef. (Berakhot 8a)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-onpage"} -->
+<p class="sd-onpage"><strong>On the page:</strong> “Rava said” often signals the resolution of a debate. When you see “Abaye said… Rava said…” side by side, expect Rava’s view to win — and to become law.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person sage"} -->
+<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/baba-metsia_84a.jpg" alt="Vilna Shas, Bava Metzia 84a"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Rabbi Yochanan</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">c. 180–279</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-daf"} -->
+<p class="person-daf">Daf: Bava Metzia 84a</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Compiler of the Jerusalem Talmud, known for piercing legal mind.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sage-details"} -->
+<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
+<p class="sd-period"><strong>Period:</strong> Amora · 1st generation (Israeli)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-basedin"} -->
+<p class="sd-basedin"><strong>Based in:</strong> Tiberias, Israel</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-knownfor"} -->
+<p class="sd-knownfor"><strong>Known for:</strong> The dominant voice of Israeli scholarship; principal architect of the Jerusalem Talmud</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-debates"} -->
+<p class="sd-debates"><strong>Debates with:</strong> Reish Lakish — his brother-in-law and the Talmud’s most beloved intellectual friendship</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-teaching"} -->
+<p class="sd-teaching"><strong>A teaching:</strong> “Whoever recites a teaching in the name of the one who said it brings redemption to the world.” (Megillah 15a)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-onpage"} -->
+<p class="sd-onpage"><strong>On the page:</strong> When Babylonian and Israeli sages disagree, Yochanan speaks for Israel. His opinions often begin “Rabbi Yochanan said in the name of…” — he was meticulous about attribution.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person sage"} -->
+<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/brakhot_10a.jpg" alt="Vilna Shas, Berakhot 10a"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Beruriah</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-meta"} -->
+<p class="person-meta">2nd century</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-daf"} -->
+<p class="person-daf">Daf: Berakhot 10a</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">One of the only women whose teachings appear in the Talmud.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"sage-details"} -->
+<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
+<p class="sd-period"><strong>Period:</strong> Tanna · 2nd century</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-basedin"} -->
+<p class="sd-basedin"><strong>Based in:</strong> Israel (wife of Rabbi Meir)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-knownfor"} -->
+<p class="sd-knownfor"><strong>Known for:</strong> The only woman whose legal rulings are recorded in the Talmud and accepted as authoritative</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-debates"} -->
+<p class="sd-debates"><strong>Debates with:</strong> Male sages she corrected on points of law — and her own husband, Rabbi Meir</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-teaching"} -->
+<p class="sd-teaching"><strong>A teaching:</strong> When her two sons died, she asked Rabbi Meir: “If someone entrusts you with a treasure, must you return it when asked?” He said yes. “God gave us these sons and has taken them back.” (Midrash Mishlei 31)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"sd-onpage"} -->
+<p class="sd-onpage"><strong>On the page:</strong> Her appearances are rare and always deliberate — each one was preserved in a literature that rarely recorded women’s voices. When she appears, it’s worth stopping.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:separator {"className":"sec-divider"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity sec-divider"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"className":"section-h"} -->
+<p class="section-h">Reference library</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"section-title"} -->
+<h2 class="wp-block-heading section-title">Talmud, in plain English</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"section-sub"} -->
+<p class="section-sub">If a term in today’s Daily Dose stops you, start here.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"ref-grid"} -->
+<div class="wp-block-group ref-grid"><!-- wp:group {"className":"ref"} -->
+<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
+<p class="ref-title"><a href="https://www.myjewishlearning.com/article/talmud-101/">What is the Talmud?</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"ref-desc"} -->
+<p class="ref-desc">Mishnah, Gemara, and the 1,500-year conversation that shaped Jewish life.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"ref"} -->
+<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
+<p class="ref-title"><a href="https://www.myjewishlearning.com/article/the-mishnah/">The building blocks of the Talmud</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"ref-desc"} -->
+<p class="ref-desc">Every page has two layers — the Mishnah and the Gemara. Here’s what each one contributes.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"ref"} -->
+<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
+<p class="ref-title"><a href="https://www.myjewishlearning.com/article/the-jerusalem-talmud/">Which Talmud is Daf Yomi?</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"ref-desc"} -->
+<p class="ref-desc">There are actually two Talmuds. Daf Yomi follows the Babylonian — here’s why.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"ref"} -->
+<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
+<p class="ref-title"><a href="https://www.myjewishlearning.com/article/talmud-words-and-phrases/">Glossary of terms</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"ref-desc"} -->
+<p class="ref-desc">Halakhah, aggadah, sugya, machloket — words that come up over and over.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"ref"} -->
+<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
+<p class="ref-title"><a href="https://www.myjewishlearning.com/article/the-six-orders-of-the-mishnah/">The six orders</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"ref-desc"} -->
+<p class="ref-desc">How the Talmud organizes itself — Zera’im, Mo’ed, Nashim, Nezikin, Kodashim, Tahorot.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"ref"} -->
+<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
+<p class="ref-title"><a href="https://www.myjewishlearning.com/article/9-things-to-know-about-the-daf-yomi-daily-page-of-talmud/">9 things to know about Daf Yomi</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"ref-desc"} -->
+<p class="ref-desc">A quick-read overview of the practice, its history, and how to make sense of what you’re reading each day.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:separator {"className":"sec-divider"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity sec-divider"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"className":"section-h"} -->
+<p class="section-h">Five ways to engage</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"className":"section-title"} -->
+<h2 class="wp-block-heading section-title">Study with us</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"section-sub"} -->
+<p class="section-sub">However you like to learn — by email, by Zoom, by video, by book, by community.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"ways-grid"} -->
+<div class="wp-block-group ways-grid"><!-- wp:group {"className":"way feat"} -->
+<div class="wp-block-group way feat"><!-- wp:paragraph {"className":"way-ico"} -->
+<p class="way-ico">א</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"way-eye"} -->
+<p class="way-eye">Daily · email</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"className":"way-title"} -->
+<h3 class="wp-block-heading way-title"><a href="https://www.myjewishlearning.com/get-your-daily-dose-of-talmud/">A Daily Dose of Talmud</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"way-desc"} -->
+<p class="way-desc">Five-minute insight on the day’s page, in your inbox every morning. The heart of the project.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"way"} -->
+<div class="wp-block-group way"><!-- wp:paragraph {"className":"way-ico"} -->
+<p class="way-ico">ש</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"way-eye"} -->
+<p class="way-eye">Weekly · Thursdays 9:30 AM ET</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"className":"way-title"} -->
+<h3 class="wp-block-heading way-title"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeM09B8nrxRVTwZk7Do-VammeDzMNimev6MqXLDOInFhuc2eQ/viewform">The Week in Review</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"way-desc"} -->
+<p class="way-desc">Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer. Free.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"way"} -->
+<div class="wp-block-group way"><!-- wp:paragraph {"className":"way-ico"} -->
+<p class="way-ico">ס</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"way-eye"} -->
+<p class="way-eye">Monthly · book club</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"className":"way-title"} -->
+<h3 class="wp-block-heading way-title"><a href="https://www.myjewishlearning.com/off-the-daf-a-talmud-book-club/">Off the Daf</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"way-desc"} -->
+<p class="way-desc">Fiction and nonfiction inspired by the Talmud, with live conversations with authors.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"way"} -->
+<div class="wp-block-group way"><!-- wp:paragraph {"className":"way-ico"} -->
+<p class="way-ico">ר</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"way-eye"} -->
+<p class="way-eye">Anytime · video</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"className":"way-title"} -->
+<h3 class="wp-block-heading way-title"><a href="https://www.youtube.com/@MyJewishLearning">Class archive</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"way-desc"} -->
+<p class="way-desc">Past Highlights sessions on YouTube — go back and rewatch anything you missed.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"way way-full"} -->
+<div class="wp-block-group way way-full"><!-- wp:paragraph {"className":"way-ico"} -->
+<p class="way-ico">ק</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"way-eye"} -->
+<p class="way-eye">Daily · community</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3,"className":"way-title"} -->
+<h3 class="wp-block-heading way-title"><a href="https://www.facebook.com/groups/dafyomi">Daf Yomi Facebook group</a></h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"className":"way-desc"} -->
+<p class="way-desc">Our most active community — thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:separator {"className":"sec-divider"} -->
+<hr class="wp-block-separator has-alpha-channel-opacity sec-divider"/>
+<!-- /wp:separator -->
+
+<!-- wp:paragraph {"className":"section-h"} -->
+<p class="section-h">Frequently asked</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"className":"faq"} -->
+<div class="wp-block-group faq"><!-- wp:details {"showContent":true} -->
+<details class="wp-block-details" open><summary>Do I need to know Hebrew or Aramaic?</summary><!-- wp:paragraph -->
+<p>Not at all. The Daily Dose is written in clear English. Hebrew and Aramaic terms are explained in context. Many of our most loyal readers have no formal Jewish education or language background.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>What if I miss a day or fall behind?</summary><!-- wp:paragraph -->
+<p>Don’t worry about it. Most Daf Yomi readers miss days. The schedule waits for no one, but the archive is always here, and the next email always lands tomorrow. Consistency over perfection.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>How long does each day take?</summary><!-- wp:paragraph -->
+<p>The Daily Dose is a five-minute read. Studying the actual page in depth typically takes 45–60 minutes, but that’s optional — the email alone is meaningful.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details -->
+
+<!-- wp:details -->
+<details class="wp-block-details"><summary>When does the current cycle end?</summary><!-- wp:paragraph -->
+<p>The 14th cycle began January 5, 2020 and ends around June 7, 2027 with a global Siyyum HaShas celebration. The 15th cycle begins immediately after.</p>
+<!-- /wp:paragraph --></details>
+<!-- /wp:details --></div>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<script>
+/* ================================================================
+   Daf Yomi Hub — WordPress script
+   Only handles what can't be typed into WordPress:
+   - today's daf + progress bar (computed from the date)
+   - the bookshelf (read / reading now / next)
+   - background images on Study opportunities
+   - the sage pop-up, which reads its text from the page
+   All words live in the WordPress blocks; nothing here is content.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var IMG_BASE = 'https://daf-yomi-red.vercel.app/images/';
+  var SUBSCRIBE_URL = 'https://www.myjewishlearning.com/get-your-daily-dose-of-talmud/';
+  var CYCLE_START = new Date('2020-01-05T00:00:00');
+  var CYCLE_TOTAL_DAYS = 2711;
+
+  // 14th cycle schedule: name, number of daily pages, spine color, MJL archive
+  var TRACTATES = [
+    ['Berakhot', 63, 'wine', 'berakhot/'],
+    ['Shabbat', 156, 'navy', 'shabbat-jewish-texts/'],
+    ['Eruvin', 104, 'navy', 'talmud/talmud-tractate-eruvin/'],
+    ['Pesachim', 120, 'navy', 'talmud/tractate-pesachim/'],
+    ['Shekalim', 21, 'navy', 'talmud/tractate-shekalim/'],
+    ['Yoma', 87, 'navy', 'talmud/tractate-yoma/'],
+    ['Sukkah', 55, 'navy', 'talmud/tractate-sukkah/'],
+    ['Beitzah', 39, 'navy', 'talmud/tractate-beitzah/'],
+    ['Rosh Hashanah', 34, 'navy', 'talmud/tractate-rosh-hashanah/'],
+    ['Taanit', 30, 'navy', 'talmud/tractate-taanit/'],
+    ['Megillah', 31, 'navy', 'talmud/tractate-megillah/'],
+    ['Moed Katan', 28, 'navy', 'talmud/tractate-moed-katan/'],
+    ['Chagigah', 26, 'navy', 'talmud/tractate-chagigah/'],
+    ['Yevamot', 121, 'forest', 'talmud/tractate-yevamot/'],
+    ['Ketubot', 111, 'forest', 'talmud/tractate-ketubot/'],
+    ['Nedarim', 90, 'forest', 'talmud/tractate-nedarim/'],
+    ['Nazir', 65, 'forest', 'talmud/tractate-nazir/'],
+    ['Sotah', 48, 'forest', 'talmud/tractate-sotah/'],
+    ['Gittin', 89, 'forest', 'talmud/tractate-gittin/'],
+    ['Kiddushin', 81, 'forest', 'talmud/tractate-kiddushin/'],
+    ['Bava Kamma', 118, 'wine', 'talmud/tractate-bava-kamma/'],
+    ['Bava Metzia', 118, 'wine', 'talmud/tractate-bava-metzia/'],
+    ['Bava Batra', 175, 'wine', 'talmud/tractate-bava-batra/'],
+    ['Sanhedrin', 112, 'wine', 'talmud/tractate-sanhedrin/'],
+    ['Makkot', 23, 'wine', 'talmud/tractate-makkot/'],
+    ['Shevuot', 48, 'wine', 'talmud/tractate-shevuot/'],
+    ['Avodah Zarah', 75, 'wine', 'talmud/tractate-avodah-zarah/'],
+    ['Horayot', 13, 'wine', 'talmud/tractate-horayot/'],
+    ['Zevachim', 119, 'navy', 'talmud/tractate-zevachim/'],
+    ['Menachot', 109, 'navy', 'talmud/tractate-menachot/'],
+    ['Chullin', 141, 'navy', null],
+    ['Bekhorot', 60, 'navy', null],
+    ['Arakhin', 33, 'navy', null],
+    ['Temurah', 33, 'navy', null],
+    ['Keritot', 27, 'navy', null],
+    ['Meilah', 21, 'navy', null],
+    ['Niddah', 72, 'amber', null]
+  ];
+
+  var DAF_IMAGES = ['brakhot_2a.jpg', 'brakhot_10a.jpg', 'brakhot_61b.jpg',
+    'chabbath_31a.jpg', 'baba-metsia_59b.jpg', 'baba-metsia_84a.jpg'];
+
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  function fmtShort(d) { return MONTHS[d.getMonth()] + ' ' + d.getDate(); }
+  function fmtLong(d) { return fmtShort(d) + ', ' + d.getFullYear(); }
+
+  function buildSchedule() {
+    var cumulative = 0;
+    return TRACTATES.map(function (t) {
+      var start = new Date(CYCLE_START);
+      start.setDate(start.getDate() + cumulative);
+      var entry = {
+        name: t[0], days: t[1], color: t[2],
+        url: t[3] ? 'https://www.myjewishlearning.com/category/study/jewish-texts/' + t[3] : null,
+        startDay: cumulative + 1, endDay: cumulative + t[1], startDate: start
+      };
+      cumulative += t[1];
+      return entry;
+    });
+  }
+
+  function todayState() {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    var cycleDay = Math.floor((today - CYCLE_START) / 86400000) + 1;
+    var map = buildSchedule();
+    var current = null, next = null;
+    for (var i = 0; i < map.length; i++) {
+      if (cycleDay >= map[i].startDay && cycleDay <= map[i].endDay) {
+        current = { tractate: map[i], daf: cycleDay - map[i].startDay + 2 };
+        next = map[i + 1] || null;
+        break;
+      }
+    }
+    return { today: today, cycleDay: cycleDay, map: map, current: current, next: next };
+  }
+
+  function setText(root, sel, text) {
+    var el = root.querySelector(sel);
+    if (el) el.textContent = text;
+  }
+
+  /* Today's daf + progress bar */
+  function renderToday(hub, s) {
+    var box = hub.querySelector('.dy-today');
+    if (!box) return;
+    setText(box, '[data-dy="eyebrow"]', 'Today on Daf Yomi · ' + fmtLong(s.today));
+    setText(box, '[data-dy="title"]', s.current
+      ? 'Tractate ' + s.current.tractate.name + ' · Daf ' + s.current.daf
+      : 'The 14th cycle is complete');
+    var pct = Math.max(0, Math.min(100, Math.round(s.cycleDay / CYCLE_TOTAL_DAYS * 100)));
+    setText(box, '[data-dy="sub"]', 'Day ' + s.cycleDay.toLocaleString() + ' of ' +
+      CYCLE_TOTAL_DAYS.toLocaleString() + ' · ' + pct + '% through the 14th cycle');
+    setText(box, '[data-dy="pct"]', pct + '% complete');
+    var fill = box.querySelector('.bar-fill');
+    if (fill) fill.style.width = pct + '%';
+    // Point "Read today's dose" at the current tractate's archive when there is one
+    var cta = hub.querySelector('.dy-read-today a');
+    if (cta && s.current && s.current.tractate.url) cta.href = s.current.tractate.url;
+  }
+
+  /* Bookshelf */
+  function renderShelf(hub, s) {
+    var rows = hub.querySelectorAll('.shelf-row');
+    if (!rows.length) return;
+    var curName = s.current ? s.current.tractate.name : null;
+    var curStart = s.current ? s.current.tractate.startDay : Infinity;
+    var books = s.map.map(function (t) {
+      var state = t.name === curName ? 'cur'
+        : (s.next && t.name === s.next.name) ? 'next'
+        : t.endDay < curStart ? 'done' : 'soon';
+      var a = document.createElement('a');
+      a.href = t.url || SUBSCRIBE_URL;
+      a.className = 'book b-' + t.color + ' b-' + state;
+      a.style.width = Math.max(20, Math.min(56, Math.round(t.days * 0.32 + 18))) + 'px';
+      a.title = t.name;
+      var spine = document.createElement('span');
+      spine.className = 'book-spine';
+      spine.textContent = t.name;
+      a.appendChild(spine);
+      if (state === 'next') {
+        var flag = document.createElement('span');
+        flag.className = 'next-flag';
+        flag.textContent = fmtShort(t.startDate);
+        a.appendChild(flag);
+      }
+      return a;
+    });
+    var per = Math.ceil(books.length / rows.length);
+    Array.prototype.forEach.call(rows, function (row, i) {
+      row.innerHTML = '';
+      books.slice(i * per, (i + 1) * per).forEach(function (b) { row.appendChild(b); });
+    });
+    if (s.next) setText(hub, '[data-dy="next"]', 'Next · ' + fmtShort(s.next.startDate));
+  }
+
+  /* Study opportunities: rotating page scan + per-row hover scans */
+  function initUpcoming(hub) {
+    var box = hub.querySelector('.upcoming');
+    if (!box) return;
+    box.querySelectorAll('.upcoming-event').forEach(function (ev, i) {
+      var bg = document.createElement('div');
+      bg.className = 'upcoming-event-bg';
+      bg.style.backgroundImage = "url('" + IMG_BASE + DAF_IMAGES[(i + 3) % DAF_IMAGES.length] + "')";
+      ev.insertBefore(bg, ev.firstChild);
+    });
+    var bg = document.createElement('div');
+    bg.className = 'upcoming-bg';
+    box.insertBefore(bg, box.firstChild);
+    var idx = Math.floor(Math.random() * DAF_IMAGES.length);
+    bg.style.backgroundImage = "url('" + IMG_BASE + DAF_IMAGES[idx] + "')";
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) box.classList.add('in-view');
+      }, { threshold: 0.15 }).observe(box);
+    } else {
+      box.classList.add('in-view');
+    }
+    setInterval(function () {
+      idx = (idx + 1) % DAF_IMAGES.length;
+      bg.style.opacity = '0';
+      setTimeout(function () {
+        bg.style.backgroundImage = "url('" + IMG_BASE + DAF_IMAGES[idx] + "')";
+        bg.style.opacity = '';
+      }, 1600);
+    }, 9000);
+  }
+
+  /* Sage pop-up: reads each card's hidden details from the page */
+  var FIELDS = [
+    ['period', 'Period', false], ['basedin', 'Based in', false],
+    ['knownfor', 'Known for', true], ['debates', 'Debates with', true]
+  ];
+
+  function detail(card, key) {
+    var p = card.querySelector('.sd-' + key);
+    if (!p) return '';
+    var clone = p.cloneNode(true);
+    var label = clone.querySelector('strong');
+    if (label) label.remove();
+    return clone.textContent.trim();
+  }
+
+  function buildModal() {
+    var overlay = document.createElement('div');
+    overlay.className = 'dy-sage-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    var grid = FIELDS.map(function (f) {
+      return '<div class="sage-field' + (f[2] ? ' sage-field-full' : '') + '">' +
+        '<div class="sage-label">' + f[1] + '</div><div class="sage-value" data-f="' + f[0] + '"></div></div>';
+    }).join('');
+    overlay.innerHTML =
+      '<div class="sage-card">' +
+        '<button class="sage-close" type="button" aria-label="Close">✕</button>' +
+        '<div class="sage-portrait"><img alt=""><div class="sage-portrait-fade"></div>' +
+          '<div class="sage-portrait-name"><div class="sage-card-name"></div><div class="sage-card-era"></div></div></div>' +
+        '<div class="sage-body">' +
+          '<div class="sage-grid">' + grid + '</div>' +
+          '<div class="sage-teaching"><div class="sage-label">A teaching</div><p class="sage-quote" data-f="teaching"></p></div>' +
+          '<div class="sage-tip"><div class="sage-label">On the page</div><div class="sage-value" data-f="onpage"></div></div>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  function initSages(hub) {
+    var cards = hub.querySelectorAll('.person.sage');
+    if (!cards.length) return;
+    var overlay = buildModal();
+    var lastFocus = null;
+
+    function close() {
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    function open(card) {
+      lastFocus = card;
+      var img = card.querySelector('.avatar img');
+      var portrait = overlay.querySelector('.sage-portrait img');
+      portrait.src = img ? img.currentSrc || img.src : '';
+      portrait.alt = img ? img.alt : '';
+      setText(overlay, '.sage-card-name', (card.querySelector('.person-name') || {}).textContent || '');
+      setText(overlay, '.sage-card-era', (card.querySelector('.person-meta') || {}).textContent || '');
+      overlay.querySelectorAll('[data-f]').forEach(function (el) {
+        el.textContent = detail(card, el.getAttribute('data-f'));
+      });
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      overlay.querySelector('.sage-close').focus();
+    }
+
+    cards.forEach(function (card) {
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('click', function () { open(card); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+      });
+    });
+    overlay.querySelector('.sage-close').addEventListener('click', close);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
+  }
+
+  function init() {
+    var hub = document.querySelector('.dy-hub');
+    if (!hub) return;
+    var s = todayState();
+    renderToday(hub, s);
+    renderShelf(hub, s);
+    initUpcoming(hub);
+    initSages(hub);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<!-- /wp:html --></div>
+<!-- /wp:group -->
+</main>
+</body>
+</html>

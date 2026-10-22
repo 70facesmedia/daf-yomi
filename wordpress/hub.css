@@ -1,0 +1,378 @@
+/* ================================================================
+   Daf Yomi Hub — WordPress styles
+   Everything is scoped under .dy-hub so it can't leak into the MJL
+   theme. Fonts fall back from the theme's own variables
+   (--f-primary = Chaparral, --f-secondary = Brandon) to Lora/Montserrat.
+   ================================================================ */
+
+.dy-hub {
+  --dy-serif: var(--f-primary, 'Lora Variable', 'Lora', Georgia, serif);
+  --dy-sans: var(--f-secondary, 'Montserrat', 'Helvetica Neue', Arial, sans-serif);
+  --dy-navy: #1D2936;
+  --dy-cyan: #3FC6F3;
+  --dy-cyan-dark: #2BAEDB;
+  --dy-ice: #E8F8FE;
+  --dy-line: rgba(29,41,54,0.12);
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--dy-navy);
+  font-family: var(--dy-serif);
+  -webkit-font-smoothing: antialiased;
+}
+.dy-hub *, .dy-hub *::before, .dy-hub *::after { box-sizing: border-box; }
+
+/* Neutralise theme + block-editor spacing so our own margins rule */
+.dy-hub :where(.wp-block-group) > * { margin-block-start: 0; margin-block-end: 0; }
+.dy-hub p, .dy-hub h1, .dy-hub h2, .dy-hub h3, .dy-hub figure { margin: 0; padding: 0; }
+.dy-hub h1, .dy-hub h2, .dy-hub h3 { font-family: var(--dy-serif); color: var(--dy-navy); text-transform: none; letter-spacing: normal; }
+.dy-hub a { color: inherit; text-decoration: none; box-shadow: none; border: 0; }
+.dy-hub a:hover { color: var(--dy-cyan); }
+.dy-hub img { max-width: 100%; height: auto; display: block; }
+
+/* TYPOGRAPHY */
+.dy-hub .eyebrow {
+  font-family: var(--dy-sans); font-size: 13px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--dy-cyan); font-weight: 700; margin-bottom: 8px;
+}
+.dy-hub .eyebrow-c, .dy-hub .h-center { text-align: center; }
+.dy-hub .h-title {
+  font-size: 34px; line-height: 1.1; font-weight: 600; margin: 0 0 10px; letter-spacing: -0.01em;
+}
+.dy-hub .h-title.h-center { font-size: 28px; }
+.dy-hub .hero-headline { font-size: 38px; margin-bottom: 14px; }
+.dy-hub .hero-intro {
+  font-size: 18px; line-height: 1.6; color: rgba(29,41,54,0.88); margin: 0 0 1.75rem;
+}
+.dy-hub .daf-today {
+  font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; line-height: 1.2;
+}
+.dy-hub .h-sub {
+  font-size: 17px; font-style: italic; opacity: 0.7; margin: 0 0 1.25rem; line-height: 1.5;
+}
+.dy-hub .section-h {
+  font-family: var(--dy-sans); font-size: 12px; text-transform: uppercase; letter-spacing: 2.5px;
+  color: rgba(29,41,54,0.6); font-weight: 700; margin: 0 0 8px;
+}
+.dy-hub .section-title { font-size: 26px; font-weight: 600; margin: 0 0 4px; line-height: 1.2; }
+.dy-hub .section-sub {
+  font-size: 15px; font-style: italic; color: rgba(29,41,54,0.6); margin: 0 0 1.25rem;
+}
+.dy-hub .section-h.spaced { margin-top: 1.5rem; }
+.dy-hub hr.sec-divider {
+  border: 0; height: 1px; background: rgba(29,41,54,0.1); margin: 2.5rem 0 2rem; opacity: 1; width: 100%; max-width: none;
+}
+
+/* CARDS */
+.dy-hub .card {
+  background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 1.75rem; margin-bottom: 1rem;
+}
+
+/* HERO COUNTER */
+.dy-hub .dy-today .eyebrow { margin-bottom: 6px; }
+.dy-hub .bar {
+  height: 8px; background: rgba(29,41,54,0.08); border-radius: 4px; overflow: hidden; margin: 10px 0 4px;
+}
+.dy-hub .bar-fill { height: 100%; background: var(--dy-cyan); width: 0; transition: width 0.6s ease; }
+.dy-hub .timeline-row {
+  font-family: var(--dy-sans); display: flex; justify-content: space-between; font-size: 11px;
+  color: rgba(29,41,54,0.55); margin-bottom: 1.25rem; letter-spacing: 0.5px;
+  text-transform: uppercase; font-weight: 600;
+}
+
+/* BUTTONS (WordPress button block) */
+.dy-hub .wp-block-buttons { display: flex; gap: 10px; flex-wrap: wrap; margin: 0; }
+.dy-hub .wp-block-button { margin: 0; }
+.dy-hub .wp-block-button__link {
+  display: inline-block; padding: 12px 22px; border-radius: 2px; background: var(--dy-cyan);
+  color: #fff; font-family: var(--dy-sans); font-weight: 700; font-size: 13px; line-height: 1.4;
+  letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none;
+}
+.dy-hub .wp-block-button__link:hover { background: var(--dy-cyan-dark); color: #fff; }
+
+/* NEW TO THE TALMUD */
+.dy-hub .why {
+  background: var(--dy-ice); border-radius: 4px; padding: 1.5rem 1.75rem; margin: 0 0 1rem;
+}
+.dy-hub .why-eye {
+  font-family: var(--dy-sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(29,41,54,0.55); font-weight: 700; margin-bottom: 6px;
+}
+.dy-hub .why-h { font-size: 24px; font-weight: 600; margin: 0 0 12px; line-height: 1.2; }
+.dy-hub .why-body {
+  font-size: 16px; line-height: 1.65; color: rgba(29,41,54,0.85); margin: 0 0 1.25rem;
+}
+
+/* STUDY OPPORTUNITIES */
+.dy-hub .upcoming {
+  background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 1.5rem 1.75rem; margin: 0 0 1rem; position: relative; overflow: hidden;
+}
+.dy-hub .upcoming > * { position: relative; z-index: 1; }
+.dy-hub .upcoming > .upcoming-bg {
+  position: absolute; top: 0; bottom: 0; right: 0; width: 55%;
+  background-size: cover; background-position: center; opacity: 0;
+  filter: sepia(0.2) brightness(0.92);
+  animation: dy-kenburns 24s ease-in-out infinite alternate;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  transition: opacity 1.6s ease; z-index: 0; pointer-events: none;
+}
+.dy-hub .upcoming.in-view > .upcoming-bg { opacity: 0.28; }
+@keyframes dy-kenburns {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.12) translate(-3%, -2%); }
+}
+.dy-hub .upcoming-eye {
+  font-family: var(--dy-sans); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(29,41,54,0.55); font-weight: 700; margin-bottom: 6px;
+}
+.dy-hub .upcoming-title { font-size: 22px; font-weight: 600; margin: 0 0 1.25rem; line-height: 1.2; }
+.dy-hub .upcoming-event {
+  position: relative; overflow: hidden; border-radius: 3px;
+  padding: 0.75rem 0.5rem 0.75rem 5rem; margin: 0 -0.5rem;
+  border-top: 0.5px solid rgba(29,41,54,0.1);
+}
+.dy-hub .upcoming-event-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  opacity: 0; filter: sepia(0.4) brightness(0.88); transition: opacity 0.45s ease;
+  z-index: 0; pointer-events: none;
+}
+.dy-hub .upcoming-event:hover .upcoming-event-bg { opacity: 0.2; }
+.dy-hub .upcoming-event .upcoming-type { position: relative; z-index: 1; }
+.dy-hub .upcoming-event .upcoming-date {
+  position: absolute; left: 0.5rem; top: 0.95rem; z-index: 1;
+  font-family: var(--dy-sans); font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--dy-cyan);
+}
+.dy-hub .upcoming-type {
+  font-family: var(--dy-sans); font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: rgba(29,41,54,0.45); margin-bottom: 3px;
+}
+.dy-hub .upcoming-name { font-size: 14px; line-height: 1.35; color: rgba(29,41,54,0.85); }
+.dy-hub .upcoming-event:hover .upcoming-name { color: var(--dy-cyan); }
+/* Whole row is clickable via the title link */
+.dy-hub .upcoming-name a::after { content: ''; position: absolute; inset: 0; z-index: 2; }
+
+/* BOOKSHELF */
+.dy-hub .room {
+  background: #F4EFE6; border-radius: 4px; padding: 1.75rem 1rem 1rem;
+  border: 0.5px solid rgba(29,41,54,0.1); margin: 1.25rem 0 1rem;
+}
+.dy-hub .shelf-row {
+  display: flex; align-items: flex-end; justify-content: center; gap: 1px; height: 160px; padding: 0 8px;
+}
+.dy-hub .shelf-floor {
+  height: 14px; background: #8B6F4A; border-top: 1px solid #A88A66;
+  border-bottom: 1px solid #5C4622; margin-bottom: 14px;
+}
+.dy-hub .book {
+  position: relative; height: 130px; cursor: pointer; transition: transform 0.25s ease;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.04); border-left: 1px solid rgba(0,0,0,0.35);
+}
+.dy-hub .book::before, .dy-hub .book::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 2px; background: #C9A864;
+}
+.dy-hub .book::before { top: 14px; }
+.dy-hub .book::after { bottom: 14px; }
+.dy-hub .book-spine {
+  writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.6px; color: #E8DCC4; text-transform: uppercase; white-space: nowrap;
+  padding: 8px 0; font-family: var(--dy-serif);
+}
+.dy-hub .book:hover { transform: translateY(-10px); z-index: 10; }
+.dy-hub .b-navy { background: #1D2936; }
+.dy-hub .b-wine { background: #3D1F2A; }
+.dy-hub .b-forest { background: #1F3527; }
+.dy-hub .b-amber { background: #3D2B17; }
+.dy-hub .b-done { opacity: 0.5; }
+.dy-hub .b-cur {
+  transform: translateY(-26px) rotate(-3deg); z-index: 6;
+  box-shadow: 0 0 0 2px var(--dy-cyan), 0 12px 18px rgba(0,0,0,0.18);
+}
+.dy-hub .b-cur::before, .dy-hub .b-cur::after { background: var(--dy-cyan); height: 3px; }
+.dy-hub .b-cur .book-spine { color: #fff; font-size: 10px; }
+.dy-hub .b-cur:hover { transform: translateY(-34px) rotate(-3deg); }
+.dy-hub .b-next {
+  transform: rotate(8deg); transform-origin: bottom left; z-index: 5; margin-left: 4px;
+  box-shadow: 3px 6px 14px rgba(0,0,0,0.18);
+}
+.dy-hub .b-next::before, .dy-hub .b-next::after { background: var(--dy-cyan); }
+.dy-hub .b-next .book-spine { color: var(--dy-cyan); }
+.dy-hub .next-flag {
+  position: absolute; top: -30px; left: 50%; transform: translateX(-50%);
+  background: var(--dy-cyan); color: #fff; font-family: var(--dy-sans); font-size: 9px;
+  font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; padding: 4px 9px;
+  border-radius: 1px; white-space: nowrap; pointer-events: none;
+}
+.dy-hub .legend {
+  display: flex; gap: 18px; font-family: var(--dy-sans); font-size: 10px; color: rgba(29,41,54,0.7);
+  flex-wrap: wrap; letter-spacing: 1.2px; font-weight: 600; text-transform: uppercase;
+  justify-content: center; margin: 0.5rem 0 0.25rem; align-items: center;
+}
+.dy-hub .legend-swatch {
+  display: inline-block; width: 8px; height: 14px; margin-right: 6px; vertical-align: middle;
+  background: var(--dy-navy);
+}
+.dy-hub .legend-swatch.cur { box-shadow: 0 0 0 1.5px var(--dy-cyan); }
+.dy-hub .legend-swatch.next { border: 1.5px solid var(--dy-cyan); }
+.dy-hub .legend-swatch.done { opacity: 0.4; }
+
+/* TEACHERS + SAGES */
+.dy-hub .scroll-row {
+  display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 14px; scroll-snap-type: x mandatory;
+}
+.dy-hub .scroll-row::-webkit-scrollbar { height: 6px; }
+.dy-hub .scroll-row::-webkit-scrollbar-thumb { background: rgba(29,41,54,0.2); border-radius: 3px; }
+.dy-hub .person {
+  position: relative; flex: 0 0 auto; width: 170px; background: #fff;
+  border: 0.5px solid var(--dy-line); border-radius: 4px; padding: 1rem;
+  scroll-snap-align: start; transition: border-color 0.2s;
+}
+.dy-hub .person:hover, .dy-hub .person:focus-visible { border-color: var(--dy-cyan); outline: none; }
+.dy-hub .person.sage { cursor: pointer; }
+.dy-hub .avatar {
+  width: 64px; height: 64px; border-radius: 50%; overflow: hidden; margin: 0 0 10px;
+  border: 0.5px solid rgba(29,41,54,0.1);
+}
+.dy-hub .avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: sepia(0.15);
+}
+.dy-hub .person-name { font-size: 15px; font-weight: 600; margin: 0 0 3px; line-height: 1.2; }
+.dy-hub .person-name a::after { content: ''; position: absolute; inset: 0; }
+.dy-hub .person-meta {
+  font-family: var(--dy-sans); font-size: 10px; color: rgba(29,41,54,0.55); text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; line-height: 1.4;
+}
+.dy-hub .person-daf {
+  font-family: var(--dy-sans); font-size: 9px; color: rgba(29,41,54,0.4); text-transform: uppercase;
+  letter-spacing: 0.8px; font-weight: 600; margin-bottom: 5px;
+}
+.dy-hub .person-bio { font-size: 12px; line-height: 1.4; color: rgba(29,41,54,0.7); }
+/* Pop-up text lives on the page for editors + search, shown in the modal */
+.dy-hub .sage-details { display: none; }
+
+/* REFERENCE LIBRARY */
+.dy-hub .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.dy-hub .ref, .dy-hub .way {
+  position: relative; background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 1rem; transition: border-color 0.2s, transform 0.15s;
+}
+.dy-hub .ref:hover, .dy-hub .way:hover { border-color: var(--dy-cyan); transform: translateY(-1px); }
+.dy-hub .ref-title { font-size: 15px; font-weight: 600; margin: 0 0 4px; line-height: 1.3; }
+.dy-hub .ref-title a::after, .dy-hub .way-title a::after { content: ''; position: absolute; inset: 0; }
+.dy-hub .ref-desc { font-size: 12px; line-height: 1.4; color: rgba(29,41,54,0.7); }
+
+/* WAYS TO ENGAGE */
+.dy-hub .ways-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.dy-hub .way { padding: 1.25rem 1.25rem 1.25rem 4.25rem; }
+.dy-hub .way.feat { border-left: 3px solid var(--dy-cyan); }
+.dy-hub .way.way-full { grid-column: 1 / -1; }
+.dy-hub .way-ico {
+  position: absolute; left: 1.25rem; top: 1.25rem; width: 36px; height: 36px;
+  background: var(--dy-ice); border-radius: 4px; display: flex; align-items: center;
+  justify-content: center; font-family: 'Libre Baskerville', Georgia, serif; font-size: 20px;
+  font-style: italic;
+}
+.dy-hub .way-eye {
+  font-family: var(--dy-sans); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(29,41,54,0.55); font-weight: 700; margin-bottom: 4px;
+}
+.dy-hub .way-title { font-size: 17px; font-weight: 600; margin: 0 0 4px; line-height: 1.25; }
+.dy-hub .way-desc { font-size: 13px; line-height: 1.45; color: rgba(29,41,54,0.7); }
+
+/* FAQ (WordPress details block) */
+.dy-hub .faq {
+  background: #fff; border: 0.5px solid var(--dy-line); border-radius: 4px;
+  padding: 0.5rem 1.5rem; margin-bottom: 1rem;
+}
+.dy-hub .faq details { padding: 1rem 0; border-bottom: 0.5px solid rgba(29,41,54,0.1); }
+.dy-hub .faq details:last-child { border-bottom: none; }
+.dy-hub .faq summary {
+  font-size: 16px; font-weight: 600; cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.dy-hub .faq summary::-webkit-details-marker { display: none; }
+.dy-hub .faq summary::after { content: '+'; font-family: var(--dy-sans); font-size: 20px; color: var(--dy-cyan); }
+.dy-hub .faq details[open] summary::after { content: '\2212'; }
+.dy-hub .faq details p { font-size: 14px; line-height: 1.6; color: rgba(29,41,54,0.8); margin: 10px 0 0; }
+
+/* SAGE MODAL (built by the script, appended to <body>) */
+.dy-sage-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(10,15,20,0.72); z-index: 100000;
+  align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px);
+  font-family: var(--f-primary, 'Lora Variable', 'Lora', Georgia, serif);
+}
+.dy-sage-overlay.is-open { display: flex; }
+.dy-sage-overlay * { box-sizing: border-box; }
+.dy-sage-overlay .sage-card {
+  background: #F9F3E3; border: 2px solid #C9A864; border-radius: 3px; max-width: 520px; width: 100%;
+  max-height: 90vh; overflow-y: auto; position: relative;
+  box-shadow: 0 0 0 8px rgba(201,168,100,0.12), 0 28px 64px rgba(0,0,0,0.5);
+}
+.dy-sage-overlay .sage-close {
+  position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.45); border: none; color: #fff;
+  font-size: 14px; width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; z-index: 10; line-height: 1; padding: 0;
+}
+.dy-sage-overlay .sage-close:hover { background: rgba(0,0,0,0.65); }
+.dy-sage-overlay .sage-portrait { position: relative; height: 210px; overflow: hidden; }
+.dy-sage-overlay .sage-portrait img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  filter: sepia(0.45) brightness(0.82); display: block; max-width: none;
+}
+.dy-sage-overlay .sage-portrait-fade {
+  position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 35%, rgba(12,8,3,0.78) 100%);
+}
+.dy-sage-overlay .sage-portrait-name { position: absolute; bottom: 1rem; left: 1.5rem; right: 3rem; }
+.dy-sage-overlay .sage-card-name { font-size: 30px; font-weight: 600; color: #fff; line-height: 1.1; }
+.dy-sage-overlay .sage-card-era,
+.dy-sage-overlay .sage-label {
+  font-family: var(--f-secondary, 'Montserrat', sans-serif); text-transform: uppercase; font-weight: 700;
+}
+.dy-sage-overlay .sage-card-era { font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 1.8px; margin-top: 5px; }
+.dy-sage-overlay .sage-body { padding: 1.5rem; }
+.dy-sage-overlay .sage-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid rgba(201,168,100,0.4);
+}
+.dy-sage-overlay .sage-field-full { grid-column: 1 / -1; }
+.dy-sage-overlay .sage-label { font-size: 9px; letter-spacing: 2px; color: #9B7A2A; margin-bottom: 4px; }
+.dy-sage-overlay .sage-value { font-size: 14px; color: #2A1F0E; line-height: 1.45; }
+.dy-sage-overlay .sage-teaching {
+  margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(201,168,100,0.4);
+}
+.dy-sage-overlay .sage-quote {
+  font-size: 15px; font-style: italic; color: #2A1F0E; line-height: 1.65; margin: 6px 0 0;
+  padding-left: 1rem; border-left: 2px solid #C9A864;
+}
+.dy-sage-overlay .sage-tip {
+  background: rgba(201,168,100,0.1); border: 1px solid rgba(201,168,100,0.35); border-radius: 2px;
+  padding: 0.85rem 1rem;
+}
+.dy-sage-overlay .sage-tip .sage-value { font-size: 13px; color: rgba(42,31,14,0.85); }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .dy-hub .card, .dy-hub .why, .dy-hub .upcoming { padding: 1.25rem; }
+  .dy-hub .h-title { font-size: 26px; }
+  .dy-hub .hero-headline { font-size: 30px; }
+  .dy-hub .h-title.h-center { font-size: 22px; }
+  .dy-hub .section-title { font-size: 22px; }
+  .dy-hub .why-h { font-size: 20px; }
+  .dy-hub .ways-grid, .dy-hub .ref-grid { grid-template-columns: 1fr; }
+  .dy-hub .way.way-full { grid-column: 1; }
+  .dy-hub .wp-block-button__link { padding: 10px 16px; font-size: 12px; letter-spacing: 1.5px; }
+  .dy-hub .shelf-row { height: 140px; }
+  .dy-hub .book { height: 110px; flex-shrink: 1; min-width: 12px; }
+  .dy-hub .book-spine { font-size: 7px; letter-spacing: 0; padding: 4px 0; }
+  .dy-sage-overlay { padding: 12px; align-items: flex-end; }
+  .dy-sage-overlay .sage-card { max-height: 92vh; border-radius: 6px 6px 0 0; }
+  .dy-sage-overlay .sage-portrait { height: 170px; }
+  .dy-sage-overlay .sage-card-name { font-size: 24px; }
+  .dy-sage-overlay .sage-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+  .dy-sage-overlay .sage-field-full { grid-column: 1; }
+  .dy-sage-overlay .sage-body { padding: 1.25rem; }
+  .dy-sage-overlay .sage-quote { font-size: 14px; }
+}

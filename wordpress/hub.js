@@ -6,6 +6,8 @@
    - background images on Study opportunities
    - the sage pop-up, which reads its text from the page
    All words live in the WordPress blocks; nothing here is content.
+   Avoid the ampersand character anywhere in this file: WordPress
+   rewrites it inside post content, which breaks the script.
    ================================================================ */
 (function () {
   'use strict';
@@ -85,7 +87,7 @@
     var map = buildSchedule();
     var current = null, next = null;
     for (var i = 0; i < map.length; i++) {
-      if (cycleDay >= map[i].startDay && cycleDay <= map[i].endDay) {
+      if (cycleDay >= map[i].startDay) if (cycleDay <= map[i].endDay) {
         current = { tractate: map[i], daf: cycleDay - map[i].startDay + 2 };
         next = map[i + 1] || null;
         break;
@@ -115,7 +117,8 @@
     if (fill) fill.style.width = pct + '%';
     // Point "Read today's dose" at the current tractate's archive when there is one
     var cta = hub.querySelector('.dy-read-today a');
-    if (cta && s.current && s.current.tractate.url) cta.href = s.current.tractate.url;
+    var url = s.current ? s.current.tractate.url : null;
+    if (cta) if (url) cta.href = url;
   }
 
   /* Bookshelf */
@@ -126,7 +129,7 @@
     var curStart = s.current ? s.current.tractate.startDay : Infinity;
     var books = s.map.map(function (t) {
       var state = t.name === curName ? 'cur'
-        : (s.next && t.name === s.next.name) ? 'next'
+        : (s.next ? t.name === s.next.name : false) ? 'next'
         : t.endDay < curStart ? 'done' : 'soon';
       var a = document.createElement('a');
       a.href = t.url || SUBSCRIBE_URL;
@@ -262,7 +265,7 @@
     overlay.querySelector('.sage-close').addEventListener('click', close);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+      if (e.key === 'Escape') if (overlay.classList.contains('is-open')) close();
     });
   }
 

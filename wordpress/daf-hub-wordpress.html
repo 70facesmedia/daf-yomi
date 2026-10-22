@@ -24,11 +24,19 @@
 }
 .dy-hub *, .dy-hub *::before, .dy-hub *::after { box-sizing: border-box; }
 
+/* MJL's theme wraps group contents in an inner container; let the
+   children lay out as if the wrapper weren't there */
+.dy-hub .wp-block-group__inner-container { display: contents; }
+
 /* Neutralise theme + block-editor spacing so our own margins rule */
-.dy-hub :where(.wp-block-group) > * { margin-block-start: 0; margin-block-end: 0; }
+.dy-hub :where(.wp-block-group, .wp-block-group__inner-container) > * { margin-block-start: 0; margin-block-end: 0; }
 .dy-hub p, .dy-hub h1, .dy-hub h2, .dy-hub h3, .dy-hub figure { margin: 0; padding: 0; }
 .dy-hub h1, .dy-hub h2, .dy-hub h3 { font-family: var(--dy-serif); color: var(--dy-navy); text-transform: none; letter-spacing: normal; }
-.dy-hub a { color: inherit; text-decoration: none; box-shadow: none; border: 0; }
+.dy-hub a { color: inherit; text-decoration: none; border: 0; }
+/* The theme underlines content links with an inset shadow */
+.dy-hub a:not(.wp-block-button__link) { box-shadow: none !important; background-image: none !important; }
+/* The hub opens with its own headline, so hide the theme's page title here */
+body:has(.dy-hub) .m-content__title { display: none; }
 .dy-hub a:hover { color: var(--dy-cyan); }
 .dy-hub img { max-width: 100%; height: auto; display: block; }
 
@@ -1168,6 +1176,8 @@
    - background images on Study opportunities
    - the sage pop-up, which reads its text from the page
    All words live in the WordPress blocks; nothing here is content.
+   Avoid the ampersand character anywhere in this file: WordPress
+   rewrites it inside post content, which breaks the script.
    ================================================================ */
 (function () {
   'use strict';
@@ -1247,7 +1257,7 @@
     var map = buildSchedule();
     var current = null, next = null;
     for (var i = 0; i < map.length; i++) {
-      if (cycleDay >= map[i].startDay && cycleDay <= map[i].endDay) {
+      if (cycleDay >= map[i].startDay) if (cycleDay <= map[i].endDay) {
         current = { tractate: map[i], daf: cycleDay - map[i].startDay + 2 };
         next = map[i + 1] || null;
         break;
@@ -1277,7 +1287,8 @@
     if (fill) fill.style.width = pct + '%';
     // Point "Read today's dose" at the current tractate's archive when there is one
     var cta = hub.querySelector('.dy-read-today a');
-    if (cta && s.current && s.current.tractate.url) cta.href = s.current.tractate.url;
+    var url = s.current ? s.current.tractate.url : null;
+    if (cta) if (url) cta.href = url;
   }
 
   /* Bookshelf */
@@ -1288,7 +1299,7 @@
     var curStart = s.current ? s.current.tractate.startDay : Infinity;
     var books = s.map.map(function (t) {
       var state = t.name === curName ? 'cur'
-        : (s.next && t.name === s.next.name) ? 'next'
+        : (s.next ? t.name === s.next.name : false) ? 'next'
         : t.endDay < curStart ? 'done' : 'soon';
       var a = document.createElement('a');
       a.href = t.url || SUBSCRIBE_URL;
@@ -1424,7 +1435,7 @@
     overlay.querySelector('.sage-close').addEventListener('click', close);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+      if (e.key === 'Escape') if (overlay.classList.contains('is-open')) close();
     });
   }
 

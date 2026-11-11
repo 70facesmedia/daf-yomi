@@ -134,7 +134,7 @@
       var a = document.createElement('a');
       a.href = t.url || SUBSCRIBE_URL;
       a.className = 'book b-' + t.color + ' b-' + state;
-      a.style.width = Math.max(20, Math.min(56, Math.round(t.days * 0.32 + 18))) + 'px';
+      a.style.width = Math.max(24, Math.min(60, Math.round(t.days * 0.32 + 22))) + 'px';
       a.title = t.name;
       var spine = document.createElement('span');
       spine.className = 'book-spine';

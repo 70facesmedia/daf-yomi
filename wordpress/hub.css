@@ -168,14 +168,14 @@ body:has(.dy-hub) .m-content__header { display: none; }
   border: 0.5px solid rgba(29,41,54,0.1); margin: 1.25rem 0 1rem;
 }
 .dy-hub .shelf-row {
-  display: flex; align-items: flex-end; justify-content: center; gap: 1px; height: 160px; padding: 0 8px;
+  display: flex; align-items: flex-end; justify-content: center; gap: 1px; height: 190px; padding: 0 8px;
 }
 .dy-hub .shelf-floor {
   height: 14px; background: #8B6F4A; border-top: 1px solid #A88A66;
   border-bottom: 1px solid #5C4622; margin-bottom: 14px;
 }
 .dy-hub .book {
-  position: relative; height: 130px; cursor: pointer; transition: transform 0.25s ease;
+  position: relative; height: 156px; cursor: pointer; transition: transform 0.25s ease;
   flex-shrink: 0; display: flex; align-items: center; justify-content: center;
   border-right: 1px solid rgba(255,255,255,0.04); border-left: 1px solid rgba(0,0,0,0.35);
 }
@@ -185,8 +185,8 @@ body:has(.dy-hub) .m-content__header { display: none; }
 .dy-hub .book::before { top: 14px; }
 .dy-hub .book::after { bottom: 14px; }
 .dy-hub .book-spine {
-  writing-mode: vertical-rl; transform: rotate(180deg); font-size: 9.5px; font-weight: 600;
-  letter-spacing: 0.6px; color: #E8DCC4; text-transform: uppercase; white-space: nowrap;
+  writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.5px; color: #E8DCC4; text-transform: uppercase; white-space: nowrap;
   padding: 8px 0; font-family: var(--dy-serif);
 }
 .dy-hub .book:hover { transform: translateY(-10px); z-index: 10; }
@@ -200,7 +200,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
   box-shadow: 0 0 0 2px var(--dy-cyan), 0 12px 18px rgba(0,0,0,0.18);
 }
 .dy-hub .b-cur::before, .dy-hub .b-cur::after { background: var(--dy-cyan); height: 3px; }
-.dy-hub .b-cur .book-spine { color: #fff; font-size: 10px; }
+.dy-hub .b-cur .book-spine { color: #fff; font-size: 12.5px; }
 .dy-hub .b-cur:hover { transform: translateY(-34px) rotate(-3deg); }
 .dy-hub .b-next {
   transform: rotate(8deg); transform-origin: bottom left; z-index: 5; margin-left: 4px;
@@ -372,9 +372,9 @@ body:has(.dy-hub) .m-content__header { display: none; }
   .dy-hub .ways-grid, .dy-hub .ref-grid { grid-template-columns: 1fr; }
   .dy-hub .way.way-full { grid-column: 1; }
   .dy-hub .wp-block-button__link { padding: 10px 16px; font-size: 14px; letter-spacing: 1.5px; }
-  .dy-hub .shelf-row { height: 140px; }
-  .dy-hub .book { height: 110px; flex-shrink: 1; min-width: 12px; }
-  .dy-hub .book-spine { font-size: 7px; letter-spacing: 0; padding: 4px 0; }
+  .dy-hub .shelf-row { height: 160px; }
+  .dy-hub .book { height: 128px; flex-shrink: 1; min-width: 12px; }
+  .dy-hub .book-spine { font-size: 9px; letter-spacing: 0; padding: 4px 0; }
   .dy-sage-overlay { padding: 12px; align-items: flex-end; }
   .dy-sage-overlay .sage-card { max-height: 92vh; border-radius: 6px 6px 0 0; }
   .dy-sage-overlay .sage-portrait { height: 170px; }

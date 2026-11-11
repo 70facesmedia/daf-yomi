@@ -232,6 +232,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 .dy-hub .b-cur:hover { transform: translateY(-34px) rotate(-3deg); }
 .dy-hub .b-next {
   transform: rotate(8deg); transform-origin: bottom left; z-index: 5; margin-left: 4px;
+  margin-right: 22px; /* room for the tilt so it does not cover the next spine */
   box-shadow: 3px 6px 14px rgba(0,0,0,0.18);
 }
 .dy-hub .b-next::before, .dy-hub .b-next::after { background: var(--dy-cyan); }

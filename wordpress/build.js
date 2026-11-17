@@ -44,8 +44,8 @@ const WEEK_IN_REVIEW = 'https://docs.google.com/forms/d/e/1FAIpQLSeM09B8nrxRVTwZ
 const BOOK_CLUB = 'https://www.myjewishlearning.com/off-the-daf-a-talmud-book-club/';
 
 const hero = G('card hero',
-  H(1, 'h-title hero-headline', 'Study Talmud every day with My Jewish Learning'),
-  P('hero-intro', 'Daf Yomi means “a page a day.” Jews around the world study the same page of the Talmud each morning — moving through all 2,711 pages over about seven and a half years, then starting again. More than 100,000 people are following along right now.'),
+  H(1, 'h-title hero-headline', 'Study Talmud Every Day<br>With My Jewish Learning'),
+  P('hero-intro', 'Daf Yomi means “daily page.” Every day, Jews around the world study the same page of the Talmud — moving in sync through all 2,711 of its pages over about seven and a half years, then starting again. Daf Yomi has been called the world’s largest book club. More than 100,000 people are following along right now.'),
   HTML(`<div class="dy-today">
   <div class="eyebrow" data-dy="eyebrow">Today on Daf Yomi</div>
   <div class="daf-today" data-dy="title"></div>
@@ -57,9 +57,9 @@ const hero = G('card hero',
 );
 
 const why = G('why',
-  P('why-eye', 'New to the Talmud?'),
-  H(2, 'why-h', 'The bedrock of Jewish thought'),
-  P('why-body', 'The Talmud is a vast, 1,500-year-old record of rabbis debating how to live a Jewish life — the source nearly every prayer, holiday, and ritual traces back to. Each page has two layers: a short statement of law called the <em>Mishnah</em>, wrapped in the <em>Gemara</em>, generations of discussion teasing out what it means. You don’t need Hebrew, Aramaic, or any background — every page comes explained in plain English.'),
+  H(2, 'why-h', 'What Is the Talmud?'),
+  P('why-body', 'The Talmud is a vast record of ancient rabbinic debates about Jewish law. Countless familiar Jewish prayers, holidays, and rituals are indelibly shaped by it.'),
+  P('why-body', 'You don’t need Hebrew or Aramaic, or to have any background, to learn with us. Each day, every page is explained in plain English.'),
   BUTTON('dy-subscribe', SUBSCRIBE, 'Subscribe — it’s free')
 );
 
@@ -81,7 +81,7 @@ const upcoming = G('upcoming',
 const shelf = [
   P('eyebrow eyebrow-c', 'The 14th cycle · 37 volumes'),
   H(2, 'h-title h-center', 'The Talmud, on a shelf'),
-  P('h-sub h-center', 'Pull any volume down to read its archive of Daily Doses'),
+  P('h-sub h-center', 'Select any volume of the Babylonian Talmud to read its archive of Daily Doses'),
   HTML(`<div class="room">
   <div class="shelf-row"></div><div class="shelf-floor"></div>
   <div class="shelf-row"></div><div class="shelf-floor"></div>
@@ -95,22 +95,39 @@ const shelf = [
 </div>`)
 ];
 
+const MJL_AUTHOR = 'https://www.myjewishlearning.com/author/';
+const MJL_UP = 'https://www.myjewishlearning.com/wp-content/uploads/';
+/* [name, bio, photo URL or null for initials, link or null] */
 const TEACHERS = [
-  ['Dr. Rachel Scheinerman', 'Editor in Chief', 'Founded the Daily Dose project. PhD in rabbinic literature.', 'rachel scheinerman.avif', 'https://www.myjewishlearning.com/author/rscheinerman/'],
-  ['Dr. Sara Ronis', 'Contributing Writer', 'Rabbi and educator. Writes on ritual, gender, and law.', 'Sara Ronis.jpg', 'https://www.myjewishlearning.com/author/sara-ronis/'],
-  ['Dr. Elli Fischer', 'Contributing Writer', 'Translator and historian of halakhah.', 'RabbI-Elli-Fischer.jpg', 'https://telaviv.academia.edu/ElliFischer'],
-  ['Rabbi Jay Kelman', 'Contributing Writer', 'Author and Talmud teacher of 30+ years.', 'Rabbi Jay Kelman.png', 'https://torahinmotion.org/profile/rabbi-jay-kelman'],
-  ['Ilana Kurshan', 'Contributing Writer', 'Author of <em>If All the Seas Were Ink</em>, a Daf Yomi memoir.', 'Ilana Kurshan.jpg', 'https://www.myjewishlearning.com/author/ilana-kurshan/'],
-  ['Rabbi Joshua Heller', 'Contributing Writer', 'Conservative rabbi writing on contemporary halakhah.', 'Joshua Heller.jpg', 'https://www.myjewishlearning.com/author/rabbi-joshua-heller/']
+  ['Dr. Rachel Scheinerman', 'My Jewish Learning editor, founded the Daily Dose project. PhD in rabbinic literature.', img('rachel scheinerman.avif'), MJL_AUTHOR + 'rscheinerman/'],
+  ['Dr. Sara Ronis', 'Rabbi and educator. Writes on ritual, gender, and law.', MJL_UP + '2022/11/sara-ronis-sir-Mara-Lebovitz-400x400.jpeg', MJL_AUTHOR + 'sara-ronis/'],
+  ['Rabbi Elliot Goldberg', 'Executive coach and consultant.', MJL_UP + '2021/05/Rabbi-Elliot-Goldberg-400x400.png', MJL_AUTHOR + 'rabbi-elliot-goldberg/'],
+  ['Sue Parker Gerson', 'ADL Program Director. Co-author of <em>Teaching Jewish History</em>.', null, MJL_AUTHOR + 'sue-parker-gerson/'],
+  ['Rabbi Lexie Botzum', 'Teaches at Yashrut’s Gemara program.', MJL_UP + '2024/02/headshot-with-sefer-400x400.jpg', MJL_AUTHOR + 'rabbi-lexie-botzum/'],
+  ['Rabbi Seth Goren', 'Hillel Ontario’s senior vice president of learning, education and research.', null, MJL_AUTHOR + 'rabbi-seth-goren/'],
+  ['Rabbi Ephraim Pelcovits', 'Educator, consultant and mentor.', MJL_UP + '2020/04/unnamed-400x400.jpg', MJL_AUTHOR + 'rabbi-ephraim-pelcovitz/'],
+  ['Max Buchdahl', 'Rabbinical student with a master’s degree in Talmud and rabbinics.', MJL_UP + '2024/02/Image-from-iOS-400x400.jpg', MJL_AUTHOR + 'max-buchdahl/'],
+  ['Rabbi Asher Lopatin', 'Spiritual leader at Kehillat Etz Chaim in Detroit.', MJL_UP + '2015/04/lopatin_asher.jpg', MJL_AUTHOR + 'rabbi-asher-lopatin/'],
+  ['Rabbanit Dasi Fruchter', 'Founder and spiritual leader of the South Philadelphia Shtiebel.', MJL_UP + '2019/08/dasiheadshot-1.jpg', MJL_AUTHOR + 'rabbanit-dasi-fruchter/'],
+  ['Rabbi Ari Saks', 'Spiritual leader and co-host of the Interfaithing Podcast.', null, null],
+  ['Dr. Yardaena Osband', 'Pediatrician and lecturer.', null, MJL_AUTHOR + 'yardaena-osband/'],
+  ['Rabbi Avigayil Halpern', 'Writer and educator.', MJL_UP + '2015/04/purple-blazer-action-shot-1-400x400.jpg', MJL_AUTHOR + 'avigayil-halpern/'],
+  ['Rabbi Shira Botzum', 'Jewish educator.', null, MJL_AUTHOR + 'rabbi-shira-botzum/'],
+  ['Rabba Alieza Salzberg Yizhar', 'Jewish educator.', MJL_UP + '2015/02-1/Alieza-Salzberg-headshot-200x200.jpg', MJL_AUTHOR + 'alieza-salzberg/'],
+  ['Rabbi Dan Ornstein', 'Writer and rabbi of Congregation Ohav Shalom in Albany.', null, MJL_AUTHOR + 'rabbi-dan-ornstein/'],
+  ['Rabbi Jonah Rank', 'President of the Hebrew Seminary: A Rabbinical School for the Deaf and Hearing.', null, MJL_AUTHOR + 'jonah-rank/'],
+  ['Rabbi Raysh Weiss', 'Co-senior rabbi of Temple Israel of Natick in Massachusetts.', null, MJL_AUTHOR + 'raysh-weiss/']
 ];
+const TITLES = /^(Dr\.|Rabbi|Rabbanit|Rabba)\s+/;
+const initials = name => name.replace(TITLES, '').split(/\s+/).filter(Boolean)
+  .filter((w, i, a) => i === 0 || i === a.length - 1).map(w => w[0]).join('');
 const teachers = [
   P('section-h', 'The voices behind the project'),
   H(2, 'section-title', 'Meet your teachers'),
-  P('section-sub', 'A rotating team of rabbis, scholars, and writers craft each Daily Dose.'),
-  G('scroll-row', ...TEACHERS.map(([name, role, bio, photo, url]) => G('person',
-    IMAGE('avatar', img(photo), name),
-    P('person-name', link(url, name, true)),
-    P('person-meta', role),
+  P('section-sub', 'These rabbis, scholars, and writers are among those who craft Daily Dose essays and teach Talmud on My Jewish Learning.'),
+  G('scroll-row teacher-rows', ...TEACHERS.map(([name, bio, photo, url]) => G('person',
+    photo ? IMAGE('avatar', photo, name) : P('avatar avatar-initials', initials(name)),
+    P('person-name', url ? link(url, name, true) : name),
     P('person-bio', bio)
   )))
 ];
@@ -212,16 +229,16 @@ const refs = [
 ];
 
 const WAYS = [
-  ['way feat', 'א', 'Daily · email', 'A Daily Dose of Talmud', SUBSCRIBE, 'Five-minute insight on the day’s page, in your inbox every morning. The heart of the project.'],
-  ['way', 'ש', 'Weekly · Thursdays 9:30 AM ET', 'The Week in Review', WEEK_IN_REVIEW, 'Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer. Free.'],
-  ['way', 'ס', 'Monthly · book club', 'Off the Daf', BOOK_CLUB, 'Fiction and nonfiction inspired by the Talmud, with live conversations with authors.'],
+  ['way feat', 'א', 'Daily · email', 'A Daily Dose of Talmud', SUBSCRIBE, 'Five-minute insight on the day’s page, delivered to your inbox every morning. The heart of the project.'],
+  ['way', 'ש', 'Weekly · Thursdays 9:30 AM ET', 'The Week in Review', WEEK_IN_REVIEW, 'Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer or educator.'],
+  ['way', 'ס', 'Monthly · book club', 'Off the Daf', BOOK_CLUB, 'Fiction and nonfiction inspired by the Talmud, featuring live conversations with authors.'],
   ['way', 'ר', 'Anytime · video', 'Class archive', 'https://www.youtube.com/@MyJewishLearning', 'Past Highlights sessions on YouTube — go back and rewatch anything you missed.'],
-  ['way way-full', 'ק', 'Daily · community', 'Daf Yomi Facebook group', 'https://www.facebook.com/groups/dafyomi', 'Our most active community — thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.']
+  ['way way-full', 'ק', 'Daily · community', 'Daf Yomi Facebook group', 'https://www.facebook.com/groups/dafyomi', 'Thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.']
 ];
 const ways = [
-  P('section-h', 'Five ways to engage'),
+  P('section-h', 'Five free ways to engage'),
   H(2, 'section-title', 'Study with us'),
-  P('section-sub', 'However you like to learn — by email, by Zoom, by video, by book, by community.'),
+  P('section-sub', 'Choose how you like to learn Talmud.'),
   G('ways-grid', ...WAYS.map(([cls, letter, eye, title, href, desc]) => G(cls,
     P('way-ico', letter),
     P('way-eye', eye),
@@ -231,10 +248,10 @@ const ways = [
 ];
 
 const FAQS = [
-  ['Do I need to know Hebrew or Aramaic?', 'Not at all. The Daily Dose is written in clear English. Hebrew and Aramaic terms are explained in context. Many of our most loyal readers have no formal Jewish education or language background.'],
+  ['Do I need to know Hebrew or Aramaic?', 'Not at all. The Daily Dose is written in English. Hebrew and Aramaic terms are explained in context. Many of our most loyal readers have no formal Jewish education or language background.'],
   ['What if I miss a day or fall behind?', 'Don’t worry about it. Most Daf Yomi readers miss days. The schedule waits for no one, but the archive is always here, and the next email always lands tomorrow. Consistency over perfection.'],
-  ['How long does each day take?', 'The Daily Dose is a five-minute read. Studying the actual page in depth typically takes 45–60 minutes, but that’s optional — the email alone is meaningful.'],
-  ['When does the current cycle end?', 'The 14th cycle began January 5, 2020 and ends around June 7, 2027 with a global Siyyum HaShas celebration. The 15th cycle begins immediately after.']
+  ['How long does each day take?', 'The Daily Dose is a five-minute read. Studying the actual page in depth typically takes 45–60 minutes, but that’s optional; the email alone is meaningful.'],
+  ['When does the current cycle end?', 'The 14th cycle began January 5, 2020, and ends around June 7, 2027, with a global Siyyum HaShas celebration. The 15th cycle begins immediately after.']
 ];
 const faq = [
   P('section-h', 'Frequently asked'),
@@ -242,6 +259,9 @@ const faq = [
 ];
 
 /* ---------- assemble ---------- */
+/* Held back at launch (Nov 2026) until Rachel reviews them; flip to true to bring back. */
+const SHOW_SAGES = false;
+const SHOW_REFS = false;
 const css = fs.readFileSync(path.join(__dirname, 'hub.css'), 'utf8');
 const js = fs.readFileSync(path.join(__dirname, 'hub.js'), 'utf8');
 
@@ -249,8 +269,8 @@ const content = G('dy-hub',
   HTML(`<style>\n${css}</style>`),
   hero, why, upcoming,
   DIVIDER(), ...shelf,
-  DIVIDER(), ...teachers, ...sages,
-  DIVIDER(), ...refs,
+  DIVIDER(), ...teachers, ...(SHOW_SAGES ? sages : []),
+  ...(SHOW_REFS ? [DIVIDER(), ...refs] : []),
   DIVIDER(), ...ways,
   DIVIDER(), ...faq,
   HTML(`<script>\n${js}</script>`)

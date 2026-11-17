@@ -389,16 +389,33 @@ body:has(.dy-hub) .m-content__header { display: none; }
   .dy-sage-overlay .sage-body { padding: 1.25rem; }
   .dy-sage-overlay .sage-quote { font-size: 17px; }
 }
+
+/* Teachers: two scrolling rows */
+.dy-hub .teacher-rows {
+  display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto);
+  grid-auto-columns: 230px; gap: 14px;
+}
+.dy-hub .teacher-rows .person { width: auto; }
+.dy-hub .avatar-initials {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--dy-navy); color: #E8DCC4; font-family: var(--dy-serif);
+  font-size: 22px; font-weight: 600; letter-spacing: 1px; line-height: 1;
+}
+/* Headline on two centered lines */
+.dy-hub .hero-headline { text-align: center; }
+@media (max-width: 600px) {
+  .dy-hub .teacher-rows { grid-auto-columns: 200px; }
+}
 </style>
 <!-- /wp:html -->
 
 <!-- wp:group {"className":"card hero"} -->
 <div class="wp-block-group card hero"><!-- wp:heading {"level":1,"className":"h-title hero-headline"} -->
-<h1 class="wp-block-heading h-title hero-headline">Study Talmud every day with My Jewish Learning</h1>
+<h1 class="wp-block-heading h-title hero-headline">Study Talmud Every Day<br>With My Jewish Learning</h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"hero-intro"} -->
-<p class="hero-intro">Daf Yomi means “a page a day.” Jews around the world study the same page of the Talmud each morning — moving through all 2,711 pages over about seven and a half years, then starting again. More than 100,000 people are following along right now.</p>
+<p class="hero-intro">Daf Yomi means “daily page.” Every day, Jews around the world study the same page of the Talmud — moving in sync through all 2,711 of its pages over about seven and a half years, then starting again. Daf Yomi has been called the world’s largest book club. More than 100,000 people are following along right now.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
@@ -419,16 +436,16 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"why"} -->
-<div class="wp-block-group why"><!-- wp:paragraph {"className":"why-eye"} -->
-<p class="why-eye">New to the Talmud?</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"className":"why-h"} -->
-<h2 class="wp-block-heading why-h">The bedrock of Jewish thought</h2>
+<div class="wp-block-group why"><!-- wp:heading {"className":"why-h"} -->
+<h2 class="wp-block-heading why-h">What Is the Talmud?</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"why-body"} -->
-<p class="why-body">The Talmud is a vast, 1,500-year-old record of rabbis debating how to live a Jewish life — the source nearly every prayer, holiday, and ritual traces back to. Each page has two layers: a short statement of law called the <em>Mishnah</em>, wrapped in the <em>Gemara</em>, generations of discussion teasing out what it means. You don’t need Hebrew, Aramaic, or any background — every page comes explained in plain English.</p>
+<p class="why-body">The Talmud is a vast record of ancient rabbinic debates about Jewish law. Countless familiar Jewish prayers, holidays, and rituals are indelibly shaped by it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"why-body"} -->
+<p class="why-body">You don’t need Hebrew or Aramaic, or to have any background, to learn with us. Each day, every page is explained in plain English.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
@@ -503,7 +520,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"h-sub h-center"} -->
-<p class="h-sub h-center">Pull any volume down to read its archive of Daily Doses</p>
+<p class="h-sub h-center">Select any volume of the Babylonian Talmud to read its archive of Daily Doses</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:html -->
@@ -533,11 +550,11 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"section-sub"} -->
-<p class="section-sub">A rotating team of rabbis, scholars, and writers craft each Daily Dose.</p>
+<p class="section-sub">These rabbis, scholars, and writers are among those who craft Daily Dose essays and teach Talmud on My Jewish Learning.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"className":"scroll-row"} -->
-<div class="wp-block-group scroll-row"><!-- wp:group {"className":"person"} -->
+<!-- wp:group {"className":"scroll-row teacher-rows"} -->
+<div class="wp-block-group scroll-row teacher-rows"><!-- wp:group {"className":"person"} -->
 <div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
 <figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/rachel%20scheinerman.avif" alt="Dr. Rachel Scheinerman"/></figure>
 <!-- /wp:image -->
@@ -546,26 +563,18 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <p class="person-name"><a href="https://www.myjewishlearning.com/author/rscheinerman/" target="_blank" rel="noreferrer noopener">Dr. Rachel Scheinerman</a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">Editor in Chief</p>
-<!-- /wp:paragraph -->
-
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Founded the Daily Dose project. PhD in rabbinic literature.</p>
+<p class="person-bio">My Jewish Learning editor, founded the Daily Dose project. PhD in rabbinic literature.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"person"} -->
 <div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Sara%20Ronis.jpg" alt="Dr. Sara Ronis"/></figure>
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2022/11/sara-ronis-sir-Mara-Lebovitz-400x400.jpeg" alt="Dr. Sara Ronis"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
 <p class="person-name"><a href="https://www.myjewishlearning.com/author/sara-ronis/" target="_blank" rel="noreferrer noopener">Dr. Sara Ronis</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">Contributing Writer</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
@@ -575,453 +584,225 @@ body:has(.dy-hub) .m-content__header { display: none; }
 
 <!-- wp:group {"className":"person"} -->
 <div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/RabbI-Elli-Fischer.jpg" alt="Dr. Elli Fischer"/></figure>
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2021/05/Rabbi-Elliot-Goldberg-400x400.png" alt="Rabbi Elliot Goldberg"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name"><a href="https://telaviv.academia.edu/ElliFischer" target="_blank" rel="noreferrer noopener">Dr. Elli Fischer</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">Contributing Writer</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-elliot-goldberg/" target="_blank" rel="noreferrer noopener">Rabbi Elliot Goldberg</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Translator and historian of halakhah.</p>
+<p class="person-bio">Executive coach and consultant.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">SG</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/sue-parker-gerson/" target="_blank" rel="noreferrer noopener">Sue Parker Gerson</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">ADL Program Director. Co-author of <em>Teaching Jewish History</em>.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"person"} -->
 <div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Rabbi%20Jay%20Kelman.png" alt="Rabbi Jay Kelman"/></figure>
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2024/02/headshot-with-sefer-400x400.jpg" alt="Rabbi Lexie Botzum"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name"><a href="https://torahinmotion.org/profile/rabbi-jay-kelman" target="_blank" rel="noreferrer noopener">Rabbi Jay Kelman</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">Contributing Writer</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-lexie-botzum/" target="_blank" rel="noreferrer noopener">Rabbi Lexie Botzum</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Author and Talmud teacher of 30+ years.</p>
+<p class="person-bio">Teaches at Yashrut’s Gemara program.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">SG</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-seth-goren/" target="_blank" rel="noreferrer noopener">Rabbi Seth Goren</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Hillel Ontario’s senior vice president of learning, education and research.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"person"} -->
 <div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Ilana%20Kurshan.jpg" alt="Ilana Kurshan"/></figure>
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2020/04/unnamed-400x400.jpg" alt="Rabbi Ephraim Pelcovits"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name"><a href="https://www.myjewishlearning.com/author/ilana-kurshan/" target="_blank" rel="noreferrer noopener">Ilana Kurshan</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">Contributing Writer</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-ephraim-pelcovitz/" target="_blank" rel="noreferrer noopener">Rabbi Ephraim Pelcovits</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Author of <em>If All the Seas Were Ink</em>, a Daf Yomi memoir.</p>
+<p class="person-bio">Educator, consultant and mentor.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"className":"person"} -->
 <div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/Joshua%20Heller.jpg" alt="Rabbi Joshua Heller"/></figure>
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2024/02/Image-from-iOS-400x400.jpg" alt="Max Buchdahl"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-joshua-heller/" target="_blank" rel="noreferrer noopener">Rabbi Joshua Heller</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">Contributing Writer</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/max-buchdahl/" target="_blank" rel="noreferrer noopener">Max Buchdahl</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Conservative rabbi writing on contemporary halakhah.</p>
+<p class="person-bio">Rabbinical student with a master’s degree in Talmud and rabbinics.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:paragraph {"className":"section-h spaced"} -->
-<p class="section-h spaced">From inside the text</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"className":"section-title"} -->
-<h2 class="wp-block-heading section-title">Meet the sages</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"className":"section-sub"} -->
-<p class="section-sub">The rabbis you’ll encounter on every page — tap one for a quick primer on who they are and why they matter.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"scroll-row"} -->
-<div class="wp-block-group scroll-row"><!-- wp:group {"className":"person sage"} -->
-<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/brakhot_2a.jpg" alt="Vilna Shas, Berakhot 2a"/></figure>
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2015/04/lopatin_asher.jpg" alt="Rabbi Asher Lopatin"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name">Rashi</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">1040–1105 · France</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-daf"} -->
-<p class="person-daf">Daf: Berakhot 2a</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-asher-lopatin/" target="_blank" rel="noreferrer noopener">Rabbi Asher Lopatin</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">The most influential Talmud commentator. His commentary appears on every page.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"sage-details"} -->
-<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
-<p class="sd-period"><strong>Period:</strong> Rishon · 11th–12th century</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-basedin"} -->
-<p class="sd-basedin"><strong>Based in:</strong> Troyes, France</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-knownfor"} -->
-<p class="sd-knownfor"><strong>Known for:</strong> Line-by-line commentary that made the Talmud accessible to all — printed on every page ever since</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-debates"} -->
-<p class="sd-debates"><strong>Debates with:</strong> The Tosafists — his own grandsons and students, who challenge him in the outer column</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-teaching"} -->
-<p class="sd-teaching"><strong>A teaching:</strong> Rashi never assumed his reader already knew. He explained everything, from the simplest word to the most tangled legal argument. That radical clarity is his legacy.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-onpage"} -->
-<p class="sd-onpage"><strong>On the page:</strong> The narrow inner column on every page is always Rashi. The distinctive slanted typeface — “Rashi script” — was named for him. Once you recognize it, you’ll never miss him.</p>
+<p class="person-bio">Spiritual leader at Kehillat Etz Chaim in Detroit.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"person sage"} -->
-<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/brakhot_61b.jpg" alt="Vilna Shas, Berakhot 61b"/></figure>
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2019/08/dasiheadshot-1.jpg" alt="Rabbanit Dasi Fruchter"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name">Rabbi Akiva</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">c. 50–135 CE</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-daf"} -->
-<p class="person-daf">Daf: Berakhot 61b</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbanit-dasi-fruchter/" target="_blank" rel="noreferrer noopener">Rabbanit Dasi Fruchter</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Shepherd turned sage. Foundational figure of rabbinic Judaism.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"sage-details"} -->
-<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
-<p class="sd-period"><strong>Period:</strong> Tanna · 3rd generation</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-basedin"} -->
-<p class="sd-basedin"><strong>Based in:</strong> Bnei Brak, Israel</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-knownfor"} -->
-<p class="sd-knownfor"><strong>Known for:</strong> Deriving new laws from every letter and ornament of the Torah; martyrdom under Rome</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-debates"} -->
-<p class="sd-debates"><strong>Debates with:</strong> Rabbi Ishmael, who argued Akiva read too much into the text</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-teaching"} -->
-<p class="sd-teaching"><strong>A teaching:</strong> “Love your neighbor as yourself — this is the great principle of the entire Torah.” (Yerushalmi Nedarim 9:4)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-onpage"} -->
-<p class="sd-onpage"><strong>On the page:</strong> Scholars say the anonymous Mishnah — the passages with no named author — follows Rabbi Akiva’s view. When the Mishnah speaks without attribution, it’s likely his voice.</p>
+<p class="person-bio">Founder and spiritual leader of the South Philadelphia Shtiebel.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"person sage"} -->
-<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/chabbath_31a.jpg" alt="Vilna Shas, Shabbat 31a"/></figure>
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">AS</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name">Rabbi Ari Saks</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Spiritual leader and co-host of the Interfaithing Podcast.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">YO</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/yardaena-osband/" target="_blank" rel="noreferrer noopener">Dr. Yardaena Osband</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Pediatrician and lecturer.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2015/04/purple-blazer-action-shot-1-400x400.jpg" alt="Rabbi Avigayil Halpern"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name">Hillel</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">c. 110 BCE–10 CE</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-daf"} -->
-<p class="person-daf">Daf: Shabbat 31a</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/avigayil-halpern/" target="_blank" rel="noreferrer noopener">Rabbi Avigayil Halpern</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Famous for the Golden Rule. School of Hillel shaped halakhah.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"sage-details"} -->
-<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
-<p class="sd-period"><strong>Period:</strong> Tanna · Zugot (paired) era</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-basedin"} -->
-<p class="sd-basedin"><strong>Based in:</strong> Jerusalem</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-knownfor"} -->
-<p class="sd-knownfor"><strong>Known for:</strong> Legal leniency and ethical clarity; founding the School of Hillel that shaped mainstream Jewish law</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-debates"} -->
-<p class="sd-debates"><strong>Debates with:</strong> Shammai — the two are paired on nearly every disputed question in the Mishnah</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-teaching"} -->
-<p class="sd-teaching"><strong>A teaching:</strong> “What is hateful to you, do not do to your neighbor. That is the whole Torah — the rest is commentary. Go and learn.” (Shabbat 31a)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-onpage"} -->
-<p class="sd-onpage"><strong>On the page:</strong> “Beit Hillel says… Beit Shammai says…” appears hundreds of times in the Talmud. The law almost always follows Hillel. When it follows Shammai, it’s worth pausing to ask why.</p>
+<p class="person-bio">Writer and educator.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"person sage"} -->
-<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/baba-metsia_59b.jpg" alt="Vilna Shas, Bava Metzia 59b"/></figure>
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">SB</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-shira-botzum/" target="_blank" rel="noreferrer noopener">Rabbi Shira Botzum</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Jewish educator.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:image {"className":"avatar"} -->
+<figure class="wp-block-image avatar"><img src="https://www.myjewishlearning.com/wp-content/uploads/2015/02-1/Alieza-Salzberg-headshot-200x200.jpg" alt="Rabba Alieza Salzberg Yizhar"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name">Rava</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">c. 280–352 · Babylon</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-daf"} -->
-<p class="person-daf">Daf: Bava Metzia 59b</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/alieza-salzberg/" target="_blank" rel="noreferrer noopener">Rabba Alieza Salzberg Yizhar</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Towering Babylonian sage. His debates with Abaye fill the Talmud.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"sage-details"} -->
-<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
-<p class="sd-period"><strong>Period:</strong> Amora · 4th generation (Babylonian)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-basedin"} -->
-<p class="sd-basedin"><strong>Based in:</strong> Machoza, Babylon</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-knownfor"} -->
-<p class="sd-knownfor"><strong>Known for:</strong> Civil and criminal law; his running debate with Abaye is the defining intellectual rivalry of the Talmud</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-debates"} -->
-<p class="sd-debates"><strong>Debates with:</strong> Abaye — the law follows Rava in all but six of their disputes. The six exceptions are memorized by a special mnemonic.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-teaching"} -->
-<p class="sd-teaching"><strong>A teaching:</strong> “A person should always live in the same city as their teacher.” He modeled this himself, remaining in Machoza to study under Rav Yosef. (Berakhot 8a)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-onpage"} -->
-<p class="sd-onpage"><strong>On the page:</strong> “Rava said” often signals the resolution of a debate. When you see “Abaye said… Rava said…” side by side, expect Rava’s view to win — and to become law.</p>
+<p class="person-bio">Jewish educator.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"person sage"} -->
-<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/baba-metsia_84a.jpg" alt="Vilna Shas, Bava Metzia 84a"/></figure>
-<!-- /wp:image -->
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">DO</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name">Rabbi Yochanan</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">c. 180–279</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-daf"} -->
-<p class="person-daf">Daf: Bava Metzia 84a</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/rabbi-dan-ornstein/" target="_blank" rel="noreferrer noopener">Rabbi Dan Ornstein</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">Compiler of the Jerusalem Talmud, known for piercing legal mind.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"sage-details"} -->
-<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
-<p class="sd-period"><strong>Period:</strong> Amora · 1st generation (Israeli)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-basedin"} -->
-<p class="sd-basedin"><strong>Based in:</strong> Tiberias, Israel</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-knownfor"} -->
-<p class="sd-knownfor"><strong>Known for:</strong> The dominant voice of Israeli scholarship; principal architect of the Jerusalem Talmud</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-debates"} -->
-<p class="sd-debates"><strong>Debates with:</strong> Reish Lakish — his brother-in-law and the Talmud’s most beloved intellectual friendship</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-teaching"} -->
-<p class="sd-teaching"><strong>A teaching:</strong> “Whoever recites a teaching in the name of the one who said it brings redemption to the world.” (Megillah 15a)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-onpage"} -->
-<p class="sd-onpage"><strong>On the page:</strong> When Babylonian and Israeli sages disagree, Yochanan speaks for Israel. His opinions often begin “Rabbi Yochanan said in the name of…” — he was meticulous about attribution.</p>
+<p class="person-bio">Writer and rabbi of Congregation Ohav Shalom in Albany.</p>
 <!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"person sage"} -->
-<div class="wp-block-group person sage"><!-- wp:image {"className":"avatar"} -->
-<figure class="wp-block-image avatar"><img src="https://daf-yomi-red.vercel.app/images/brakhot_10a.jpg" alt="Vilna Shas, Berakhot 10a"/></figure>
-<!-- /wp:image -->
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">JR</p>
+<!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-name"} -->
-<p class="person-name">Beruriah</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-meta"} -->
-<p class="person-meta">2nd century</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"person-daf"} -->
-<p class="person-daf">Daf: Berakhot 10a</p>
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/jonah-rank/" target="_blank" rel="noreferrer noopener">Rabbi Jonah Rank</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"className":"person-bio"} -->
-<p class="person-bio">One of the only women whose teachings appear in the Talmud.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"sage-details"} -->
-<div class="wp-block-group sage-details"><!-- wp:paragraph {"className":"sd-period"} -->
-<p class="sd-period"><strong>Period:</strong> Tanna · 2nd century</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-basedin"} -->
-<p class="sd-basedin"><strong>Based in:</strong> Israel (wife of Rabbi Meir)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-knownfor"} -->
-<p class="sd-knownfor"><strong>Known for:</strong> The only woman whose legal rulings are recorded in the Talmud and accepted as authoritative</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-debates"} -->
-<p class="sd-debates"><strong>Debates with:</strong> Male sages she corrected on points of law — and her own husband, Rabbi Meir</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-teaching"} -->
-<p class="sd-teaching"><strong>A teaching:</strong> When her two sons died, she asked Rabbi Meir: “If someone entrusts you with a treasure, must you return it when asked?” He said yes. “God gave us these sons and has taken them back.” (Midrash Mishlei 31)</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"sd-onpage"} -->
-<p class="sd-onpage"><strong>On the page:</strong> Her appearances are rare and always deliberate — each one was preserved in a literature that rarely recorded women’s voices. When she appears, it’s worth stopping.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
-
-<!-- wp:separator {"className":"sec-divider"} -->
-<hr class="wp-block-separator has-alpha-channel-opacity sec-divider"/>
-<!-- /wp:separator -->
-
-<!-- wp:paragraph {"className":"section-h"} -->
-<p class="section-h">Reference library</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:heading {"className":"section-title"} -->
-<h2 class="wp-block-heading section-title">Talmud, in plain English</h2>
-<!-- /wp:heading -->
-
-<!-- wp:paragraph {"className":"section-sub"} -->
-<p class="section-sub">If a term in today’s Daily Dose stops you, start here.</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"className":"ref-grid"} -->
-<div class="wp-block-group ref-grid"><!-- wp:group {"className":"ref"} -->
-<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
-<p class="ref-title"><a href="https://www.myjewishlearning.com/article/talmud-101/">What is the Talmud?</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"ref-desc"} -->
-<p class="ref-desc">Mishnah, Gemara, and the 1,500-year conversation that shaped Jewish life.</p>
+<p class="person-bio">President of the Hebrew Seminary: A Rabbinical School for the Deaf and Hearing.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"ref"} -->
-<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
-<p class="ref-title"><a href="https://www.myjewishlearning.com/article/the-mishnah/">The building blocks of the Talmud</a></p>
+<!-- wp:group {"className":"person"} -->
+<div class="wp-block-group person"><!-- wp:paragraph {"className":"avatar avatar-initials"} -->
+<p class="avatar avatar-initials">RW</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"ref-desc"} -->
-<p class="ref-desc">Every page has two layers — the Mishnah and the Gemara. Here’s what each one contributes.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"ref"} -->
-<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
-<p class="ref-title"><a href="https://www.myjewishlearning.com/article/the-jerusalem-talmud/">Which Talmud is Daf Yomi?</a></p>
+<!-- wp:paragraph {"className":"person-name"} -->
+<p class="person-name"><a href="https://www.myjewishlearning.com/author/raysh-weiss/" target="_blank" rel="noreferrer noopener">Rabbi Raysh Weiss</a></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph {"className":"ref-desc"} -->
-<p class="ref-desc">There are actually two Talmuds. Daf Yomi follows the Babylonian — here’s why.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"ref"} -->
-<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
-<p class="ref-title"><a href="https://www.myjewishlearning.com/article/talmud-words-and-phrases/">Glossary of terms</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"ref-desc"} -->
-<p class="ref-desc">Halakhah, aggadah, sugya, machloket — words that come up over and over.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"ref"} -->
-<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
-<p class="ref-title"><a href="https://www.myjewishlearning.com/article/the-six-orders-of-the-mishnah/">The six orders</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"ref-desc"} -->
-<p class="ref-desc">How the Talmud organizes itself — Zera’im, Mo’ed, Nashim, Nezikin, Kodashim, Tahorot.</p>
-<!-- /wp:paragraph --></div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"ref"} -->
-<div class="wp-block-group ref"><!-- wp:paragraph {"className":"ref-title"} -->
-<p class="ref-title"><a href="https://www.myjewishlearning.com/article/9-things-to-know-about-the-daf-yomi-daily-page-of-talmud/">9 things to know about Daf Yomi</a></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"className":"ref-desc"} -->
-<p class="ref-desc">A quick-read overview of the practice, its history, and how to make sense of what you’re reading each day.</p>
+<!-- wp:paragraph {"className":"person-bio"} -->
+<p class="person-bio">Co-senior rabbi of Temple Israel of Natick in Massachusetts.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -1031,7 +812,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:separator -->
 
 <!-- wp:paragraph {"className":"section-h"} -->
-<p class="section-h">Five ways to engage</p>
+<p class="section-h">Five free ways to engage</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"className":"section-title"} -->
@@ -1039,7 +820,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"section-sub"} -->
-<p class="section-sub">However you like to learn — by email, by Zoom, by video, by book, by community.</p>
+<p class="section-sub">Choose how you like to learn Talmud.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group {"className":"ways-grid"} -->
@@ -1057,7 +838,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"way-desc"} -->
-<p class="way-desc">Five-minute insight on the day’s page, in your inbox every morning. The heart of the project.</p>
+<p class="way-desc">Five-minute insight on the day’s page, delivered to your inbox every morning. The heart of the project.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -1075,7 +856,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"way-desc"} -->
-<p class="way-desc">Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer. Free.</p>
+<p class="way-desc">Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer or educator.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -1093,7 +874,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"way-desc"} -->
-<p class="way-desc">Fiction and nonfiction inspired by the Talmud, with live conversations with authors.</p>
+<p class="way-desc">Fiction and nonfiction inspired by the Talmud, featuring live conversations with authors.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
@@ -1129,7 +910,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- /wp:heading -->
 
 <!-- wp:paragraph {"className":"way-desc"} -->
-<p class="way-desc">Our most active community — thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.</p>
+<p class="way-desc">Thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
@@ -1145,7 +926,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 <!-- wp:group {"className":"faq"} -->
 <div class="wp-block-group faq"><!-- wp:details {"showContent":true} -->
 <details class="wp-block-details" open><summary>Do I need to know Hebrew or Aramaic?</summary><!-- wp:paragraph -->
-<p>Not at all. The Daily Dose is written in clear English. Hebrew and Aramaic terms are explained in context. Many of our most loyal readers have no formal Jewish education or language background.</p>
+<p>Not at all. The Daily Dose is written in English. Hebrew and Aramaic terms are explained in context. Many of our most loyal readers have no formal Jewish education or language background.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
@@ -1157,13 +938,13 @@ body:has(.dy-hub) .m-content__header { display: none; }
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>How long does each day take?</summary><!-- wp:paragraph -->
-<p>The Daily Dose is a five-minute read. Studying the actual page in depth typically takes 45–60 minutes, but that’s optional — the email alone is meaningful.</p>
+<p>The Daily Dose is a five-minute read. Studying the actual page in depth typically takes 45–60 minutes, but that’s optional; the email alone is meaningful.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details -->
 
 <!-- wp:details -->
 <details class="wp-block-details"><summary>When does the current cycle end?</summary><!-- wp:paragraph -->
-<p>The 14th cycle began January 5, 2020 and ends around June 7, 2027 with a global Siyyum HaShas celebration. The 15th cycle begins immediately after.</p>
+<p>The 14th cycle began January 5, 2020, and ends around June 7, 2027, with a global Siyyum HaShas celebration. The 15th cycle begins immediately after.</p>
 <!-- /wp:paragraph --></details>
 <!-- /wp:details --></div>
 <!-- /wp:group -->

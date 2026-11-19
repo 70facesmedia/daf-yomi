@@ -112,7 +112,7 @@ const TEACHERS = [
   ['Rabbi Ari Saks', 'Spiritual leader and co-host of the Interfaithing Podcast.', null, null],
   ['Dr. Yardaena Osband', 'Pediatrician and lecturer.', MJL_UP + '2015/04/YardaenaOsbandheadshot-400x400.jpg', MJL_AUTHOR + 'yardaena-osband/'],
   ['Rabbi Avigayil Halpern', 'Writer and educator.', MJL_UP + '2015/04/purple-blazer-action-shot-1-400x400.jpg', MJL_AUTHOR + 'avigayil-halpern/'],
-  ['Rabbi Shira Botzum', 'Jewish educator.', null, MJL_AUTHOR + 'rabbi-shira-botzum/'],
+  ['Rabbi Shira Botzum', 'Jewish educator.', MJL_UP + '2025/10/Shira-Headshot-400x400.jpeg', MJL_AUTHOR + 'rabbi-shira-botzum/'],
   ['Rabba Alieza Salzberg Yizhar', 'Jewish educator.', MJL_UP + '2015/02-1/Alieza-Salzberg-headshot-200x200.jpg', MJL_AUTHOR + 'alieza-salzberg/'],
   ['Rabbi Dan Ornstein', 'Writer and rabbi of Congregation Ohav Shalom in Albany.', MJL_UP + '2022/06/Dan-Ornstein-400x400.jpeg', MJL_AUTHOR + 'rabbi-dan-ornstein/'],
   ['Rabbi Jonah Rank', 'President of the Hebrew Seminary: A Rabbinical School for the Deaf and Hearing.', MJL_UP + '2025/05/Jonah-Rank-Headshot-2023-400x400.jpg', MJL_AUTHOR + 'jonah-rank/'],
@@ -232,7 +232,7 @@ const WAYS = [
   ['way feat', 'א', 'Daily · email', 'A Daily Dose of Talmud', SUBSCRIBE, 'Five-minute insight on the day’s page, delivered to your inbox every morning. The heart of the project.'],
   ['way', 'ש', 'Weekly · Thursdays 9:30 AM ET', 'The Week in Review', WEEK_IN_REVIEW, 'Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer or educator.'],
   ['way', 'ס', 'Monthly · book club', 'Off the Daf', BOOK_CLUB, 'Fiction and nonfiction inspired by the Talmud, featuring live conversations with authors.'],
-  ['way', 'ר', 'Anytime · video', 'Class archive', 'https://www.youtube.com/playlist?list=PLTa0cbjtQOrc', 'Past Highlights sessions on YouTube — go back and rewatch anything you missed.'],
+  ['way', 'ר', 'Anytime · video', 'Class Archive', 'https://www.youtube.com/playlist?list=PLCP3kSRzZqpc', 'Past Highlights sessions on YouTube — go back and rewatch anything you missed.'],
   ['way way-full', 'ק', 'Daily · community', 'Daf Yomi Facebook group', 'https://www.facebook.com/groups/dailydoseoftalmud', 'Thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.']
 ];
 const ways = [

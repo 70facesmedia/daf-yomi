@@ -102,21 +102,21 @@ const TEACHERS = [
   ['Dr. Rachel Scheinerman', 'My Jewish Learning editor, founded the Daily Dose project. PhD in rabbinic literature.', img('rachel scheinerman.avif'), MJL_AUTHOR + 'rscheinerman/'],
   ['Dr. Sara Ronis', 'Rabbi and educator. Writes on ritual, gender, and law.', MJL_UP + '2022/11/sara-ronis-sir-Mara-Lebovitz-400x400.jpeg', MJL_AUTHOR + 'sara-ronis/'],
   ['Rabbi Elliot Goldberg', 'Executive coach and consultant.', MJL_UP + '2021/05/Rabbi-Elliot-Goldberg-400x400.png', MJL_AUTHOR + 'rabbi-elliot-goldberg/'],
-  ['Sue Parker Gerson', 'ADL Program Director. Co-author of <em>Teaching Jewish History</em>.', null, MJL_AUTHOR + 'sue-parker-gerson/'],
+  ['Sue Parker Gerson', 'ADL Program Director. Co-author of <em>Teaching Jewish History</em>.', MJL_UP + '2020/06/Sue-Parker-Gerson-200x200.jpeg', MJL_AUTHOR + 'sue-parker-gerson/'],
   ['Rabbi Lexie Botzum', 'Teaches at Yashrut’s Gemara program.', MJL_UP + '2024/02/headshot-with-sefer-400x400.jpg', MJL_AUTHOR + 'rabbi-lexie-botzum/'],
-  ['Rabbi Seth Goren', 'Hillel Ontario’s senior vice president of learning, education and research.', null, MJL_AUTHOR + 'rabbi-seth-goren/'],
+  ['Rabbi Seth Goren', 'Hillel Ontario’s senior vice president of learning, education and research.', MJL_UP + '2015/04/Seth-Goren-Headshot-400x400.jpg', MJL_AUTHOR + 'rabbi-seth-goren/'],
   ['Rabbi Ephraim Pelcovits', 'Educator, consultant and mentor.', MJL_UP + '2020/04/unnamed-400x400.jpg', MJL_AUTHOR + 'rabbi-ephraim-pelcovitz/'],
   ['Max Buchdahl', 'Rabbinical student with a master’s degree in Talmud and rabbinics.', MJL_UP + '2024/02/Image-from-iOS-400x400.jpg', MJL_AUTHOR + 'max-buchdahl/'],
   ['Rabbi Asher Lopatin', 'Spiritual leader at Kehillat Etz Chaim in Detroit.', MJL_UP + '2015/04/lopatin_asher.jpg', MJL_AUTHOR + 'rabbi-asher-lopatin/'],
   ['Rabbanit Dasi Fruchter', 'Founder and spiritual leader of the South Philadelphia Shtiebel.', MJL_UP + '2019/08/dasiheadshot-1.jpg', MJL_AUTHOR + 'rabbanit-dasi-fruchter/'],
   ['Rabbi Ari Saks', 'Spiritual leader and co-host of the Interfaithing Podcast.', null, null],
-  ['Dr. Yardaena Osband', 'Pediatrician and lecturer.', null, MJL_AUTHOR + 'yardaena-osband/'],
+  ['Dr. Yardaena Osband', 'Pediatrician and lecturer.', MJL_UP + '2015/04/YardaenaOsbandheadshot-400x400.jpg', MJL_AUTHOR + 'yardaena-osband/'],
   ['Rabbi Avigayil Halpern', 'Writer and educator.', MJL_UP + '2015/04/purple-blazer-action-shot-1-400x400.jpg', MJL_AUTHOR + 'avigayil-halpern/'],
   ['Rabbi Shira Botzum', 'Jewish educator.', null, MJL_AUTHOR + 'rabbi-shira-botzum/'],
   ['Rabba Alieza Salzberg Yizhar', 'Jewish educator.', MJL_UP + '2015/02-1/Alieza-Salzberg-headshot-200x200.jpg', MJL_AUTHOR + 'alieza-salzberg/'],
-  ['Rabbi Dan Ornstein', 'Writer and rabbi of Congregation Ohav Shalom in Albany.', null, MJL_AUTHOR + 'rabbi-dan-ornstein/'],
-  ['Rabbi Jonah Rank', 'President of the Hebrew Seminary: A Rabbinical School for the Deaf and Hearing.', null, MJL_AUTHOR + 'jonah-rank/'],
-  ['Rabbi Raysh Weiss', 'Co-senior rabbi of Temple Israel of Natick in Massachusetts.', null, MJL_AUTHOR + 'raysh-weiss/']
+  ['Rabbi Dan Ornstein', 'Writer and rabbi of Congregation Ohav Shalom in Albany.', MJL_UP + '2022/06/Dan-Ornstein-400x400.jpeg', MJL_AUTHOR + 'rabbi-dan-ornstein/'],
+  ['Rabbi Jonah Rank', 'President of the Hebrew Seminary: A Rabbinical School for the Deaf and Hearing.', MJL_UP + '2025/05/Jonah-Rank-Headshot-2023-400x400.jpg', MJL_AUTHOR + 'jonah-rank/'],
+  ['Rabbi Raysh Weiss', 'Co-senior rabbi of Temple Israel of Natick in Massachusetts.', MJL_UP + '2015/02/Raysh-Weiss-200x200.jpg', MJL_AUTHOR + 'raysh-weiss/']
 ];
 const TITLES = /^(Dr\.|Rabbi|Rabbanit|Rabba)\s+/;
 const initials = name => name.replace(TITLES, '').split(/\s+/).filter(Boolean)

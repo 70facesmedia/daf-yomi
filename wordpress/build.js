@@ -81,7 +81,7 @@ const upcoming = G('upcoming',
 const shelf = [
   P('eyebrow eyebrow-c', 'The 14th cycle · 37 volumes'),
   H(2, 'h-title h-center', 'The Talmud, on a shelf'),
-  P('h-sub h-center', 'Select any volume of the Babylonian Talmud to read its archive of Daily Doses'),
+  P('h-sub h-center', 'Select any volume of the Babylonian Talmud to read its archive of Daily Doses.'),
   HTML(`<div class="room">
   <div class="shelf-row"></div><div class="shelf-floor"></div>
   <div class="shelf-row"></div><div class="shelf-floor"></div>
@@ -90,7 +90,7 @@ const shelf = [
     <span><span class="legend-swatch done"></span>Read</span>
     <span><span class="legend-swatch cur"></span>Reading now</span>
     <span><span class="legend-swatch next"></span><span data-dy="next">Next</span></span>
-    <span><span class="legend-swatch"></span>Upcoming</span>
+    <span><span class="legend-swatch soon"></span>Upcoming</span>
   </div>
 </div>`)
 ];
@@ -232,8 +232,8 @@ const WAYS = [
   ['way feat', 'א', 'Daily · email', 'A Daily Dose of Talmud', SUBSCRIBE, 'Five-minute insight on the day’s page, delivered to your inbox every morning. The heart of the project.'],
   ['way', 'ש', 'Weekly · Thursdays 9:30 AM ET', 'The Week in Review', WEEK_IN_REVIEW, 'Live Zoom recap of the week’s pages, hosted by a familiar Daily Dose writer or educator.'],
   ['way', 'ס', 'Monthly · book club', 'Off the Daf', BOOK_CLUB, 'Fiction and nonfiction inspired by the Talmud, featuring live conversations with authors.'],
-  ['way', 'ר', 'Anytime · video', 'Class archive', 'https://www.youtube.com/@MyJewishLearning', 'Past Highlights sessions on YouTube — go back and rewatch anything you missed.'],
-  ['way way-full', 'ק', 'Daily · community', 'Daf Yomi Facebook group', 'https://www.facebook.com/groups/dafyomi', 'Thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.']
+  ['way', 'ר', 'Anytime · video', 'Class archive', 'https://www.youtube.com/playlist?list=PLTa0cbjtQOrc', 'Past Highlights sessions on YouTube — go back and rewatch anything you missed.'],
+  ['way way-full', 'ק', 'Daily · community', 'Daf Yomi Facebook group', 'https://www.facebook.com/groups/dailydoseoftalmud', 'Thousands of readers asking questions, sharing reactions, and discussing each day’s page in real time.']
 ];
 const ways = [
   P('section-h', 'Five free ways to engage'),

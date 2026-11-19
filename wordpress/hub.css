@@ -194,8 +194,14 @@ body:has(.dy-hub) .m-content__header { display: none; }
 .dy-hub .b-wine { background: #3D1F2A; }
 .dy-hub .b-forest { background: #1F3527; }
 .dy-hub .b-amber { background: #3D2B17; }
-.dy-hub .b-done { opacity: 0.72; }
+/* Read volumes keep their full color; volumes still ahead are faded */
 .dy-hub .b-done .book-spine { color: #F4ECDC; }
+.dy-hub .b-soon { opacity: 0.4; }
+.dy-hub button.book { padding: 0; font: inherit; border-top: 0; border-bottom: 0; appearance: none; }
+.dy-hub .date-flag { display: none; background: var(--dy-navy); }
+.dy-hub .b-soon:hover .date-flag, .dy-hub .b-soon:focus-visible .date-flag,
+.dy-hub .b-soon.show-date .date-flag { display: block; }
+.dy-hub .b-soon:hover, .dy-hub .b-soon.show-date { opacity: 0.75; z-index: 10; }
 .dy-hub .b-cur {
   transform: translateY(-26px) rotate(-3deg); z-index: 6;
   box-shadow: 0 0 0 2px var(--dy-cyan), 0 12px 18px rgba(0,0,0,0.18);
@@ -227,7 +233,8 @@ body:has(.dy-hub) .m-content__header { display: none; }
 }
 .dy-hub .legend-swatch.cur { box-shadow: 0 0 0 1.5px var(--dy-cyan); }
 .dy-hub .legend-swatch.next { border: 1.5px solid var(--dy-cyan); }
-.dy-hub .legend-swatch.done { opacity: 0.6; }
+.dy-hub .legend-swatch.done { background: linear-gradient(90deg, #3D1F2A 33%, #1D2936 33% 66%, #1F3527 66%); width: 14px; }
+.dy-hub .legend-swatch.soon { opacity: 0.4; }
 
 /* TEACHERS + SAGES */
 .dy-hub .scroll-row {

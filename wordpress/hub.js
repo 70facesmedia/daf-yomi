@@ -49,13 +49,13 @@
     ['Horayot', 13, 'wine', 'talmud/tractate-horayot/'],
     ['Zevachim', 119, 'navy', 'talmud/tractate-zevachim/'],
     ['Menachot', 109, 'navy', 'talmud/tractate-menachot/'],
-    ['Chullin', 141, 'navy', null],
-    ['Bekhorot', 60, 'navy', null],
-    ['Arakhin', 33, 'navy', null],
-    ['Temurah', 33, 'navy', null],
-    ['Keritot', 27, 'navy', null],
-    ['Meilah', 21, 'navy', null],
-    ['Niddah', 72, 'amber', null]
+    ['Chullin', 141, 'navy', 'talmud/tractate-chullin/'],
+    ['Bekhorot', 60, 'navy', 'talmud/tractate-bekhorot/'],
+    ['Arakhin', 33, 'navy', 'talmud/tractate-arakhin/'],
+    ['Temurah', 33, 'navy', 'talmud/tractate-temurah/'],
+    ['Keritot', 27, 'navy', 'talmud/tractate-keritot/'],
+    ['Meilah', 21, 'navy', 'talmud/tractate-meilah/'],
+    ['Niddah', 72, 'amber', 'talmud/tractate-niddah/']
   ];
 
   var DAF_IMAGES = ['brakhot_2a.jpg', 'brakhot_10a.jpg', 'brakhot_61b.jpg',
@@ -115,10 +115,17 @@
     setText(box, '[data-dy="pct"]', pct + '% complete');
     var fill = box.querySelector('.bar-fill');
     if (fill) fill.style.width = pct + '%';
-    // Point "Read today's dose" at the current tractate's archive when there is one
+    // "Read today's dose": the tractate archive first, then today's essay once
+    // it is confirmed published (essays live at /article/arakhin-2/ and so on)
     var cta = hub.querySelector('.dy-read-today a');
-    var url = s.current ? s.current.tractate.url : null;
-    if (cta) if (url) cta.href = url;
+    if (!cta) return;
+    if (!s.current) return;
+    if (s.current.tractate.url) cta.href = s.current.tractate.url;
+    var essay = '/article/' + s.current.tractate.name.toLowerCase().replace(/ /g, '-') +
+      '-' + s.current.daf + '/';
+    if (window.fetch) fetch(essay, { method: 'HEAD' }).then(function (r) {
+      if (r.ok) cta.href = essay;
+    }).catch(function () {});
   }
 
   /* Bookshelf */
@@ -131,8 +138,20 @@
       var state = t.name === curName ? 'cur'
         : (s.next ? t.name === s.next.name : false) ? 'next'
         : t.endDay < curStart ? 'done' : 'soon';
-      var a = document.createElement('a');
-      a.href = t.url || SUBSCRIBE_URL;
+      // Read and current volumes open their archive; later ones show their start date
+      var later = state === 'next' || state === 'soon';
+      var a = document.createElement(later ? 'button' : 'a');
+      if (later) {
+        a.type = 'button';
+        a.setAttribute('aria-label', t.name + ', begins ' + fmtLong(t.startDate));
+        a.addEventListener('click', function () {
+          var open = a.classList.contains('show-date');
+          Array.prototype.forEach.call(hub.querySelectorAll('.show-date'), function (b) { b.classList.remove('show-date'); });
+          if (!open) a.classList.add('show-date');
+        });
+      } else {
+        a.href = t.url || SUBSCRIBE_URL;
+      }
       a.className = 'book b-' + t.color + ' b-' + state;
       a.style.width = Math.max(24, Math.min(60, Math.round(t.days * 0.32 + 22))) + 'px';
       a.title = t.name;
@@ -140,10 +159,10 @@
       spine.className = 'book-spine';
       spine.textContent = t.name;
       a.appendChild(spine);
-      if (state === 'next') {
+      if (later) {
         var flag = document.createElement('span');
-        flag.className = 'next-flag';
-        flag.textContent = fmtShort(t.startDate);
+        flag.className = state === 'next' ? 'next-flag' : 'next-flag date-flag';
+        flag.textContent = (state === 'next' ? '' : 'Begins ') + fmtShort(t.startDate);
         a.appendChild(flag);
       }
       return a;

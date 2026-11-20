@@ -233,8 +233,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 }
 .dy-hub .legend-swatch.cur { box-shadow: 0 0 0 1.5px var(--dy-cyan); }
 .dy-hub .legend-swatch.next { border: 1.5px solid var(--dy-cyan); }
-.dy-hub .legend-swatch.done { background: linear-gradient(90deg, #3D1F2A 33%, #1D2936 33% 66%, #1F3527 66%); width: 14px; }
-.dy-hub .legend-swatch.soon { opacity: 0.4; }
+
 
 /* TEACHERS + SAGES */
 .dy-hub .scroll-row {
@@ -409,4 +408,18 @@ body:has(.dy-hub) .m-content__header { display: none; }
 .dy-hub .hero-headline { text-align: center; }
 @media (max-width: 600px) {
   .dy-hub .teacher-rows { grid-auto-columns: 200px; }
+}
+
+/* Plain-language key under the shelf (replaces the swatch legend) */
+.dy-hub .legend-note {
+  font-family: var(--dy-serif); font-style: italic; font-size: 17px; line-height: 1.45;
+  color: rgba(29,41,54,0.75); text-align: center; margin: 0.5rem auto 0.25rem; max-width: 34em;
+}
+/* Level the tags (the books are tilted) and spread them apart so they never collide */
+.dy-hub .flag-cur { background: var(--dy-navy); left: auto; right: -2px; transform: rotate(3deg); }
+.dy-hub .flag-next { left: -2px; transform: rotate(-8deg); transform-origin: bottom left; }
+.dy-hub .shelf-row.has-tags { margin-top: 30px; }
+@media (max-width: 600px) {
+  .dy-hub .next-flag { font-size: 9px; letter-spacing: 0.8px; padding: 3px 6px; top: -24px; }
+  .dy-hub .legend-note { font-size: 15px; }
 }

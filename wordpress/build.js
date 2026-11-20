@@ -86,12 +86,7 @@ const shelf = [
   <div class="shelf-row"></div><div class="shelf-floor"></div>
   <div class="shelf-row"></div><div class="shelf-floor"></div>
   <div class="shelf-row"></div><div class="shelf-floor"></div>
-  <div class="legend">
-    <span><span class="legend-swatch done"></span>Read</span>
-    <span><span class="legend-swatch cur"></span>Reading now</span>
-    <span><span class="legend-swatch next"></span><span data-dy="next">Next</span></span>
-    <span><span class="legend-swatch soon"></span>Upcoming</span>
-  </div>
+  <p class="legend-note">Full-color volumes are finished. Faded ones are still ahead. Tap one to see when it starts.</p>
 </div>`)
 ];
 

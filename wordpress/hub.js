@@ -159,10 +159,14 @@
       spine.className = 'book-spine';
       spine.textContent = t.name;
       a.appendChild(spine);
-      if (later) {
+      // Tags on the books themselves: "Reading now", "Next · Dec 22", and "Begins …" on tap
+      var tag = state === 'cur' ? 'Reading now'
+        : state === 'next' ? 'Next · ' + fmtShort(t.startDate)
+        : state === 'soon' ? 'Begins ' + fmtShort(t.startDate) : '';
+      if (tag) {
         var flag = document.createElement('span');
-        flag.className = state === 'next' ? 'next-flag' : 'next-flag date-flag';
-        flag.textContent = (state === 'next' ? '' : 'Begins ') + fmtShort(t.startDate);
+        flag.className = state === 'soon' ? 'next-flag date-flag' : 'next-flag flag-' + state;
+        flag.textContent = tag;
         a.appendChild(flag);
       }
       return a;
@@ -171,8 +175,8 @@
     Array.prototype.forEach.call(rows, function (row, i) {
       row.innerHTML = '';
       books.slice(i * per, (i + 1) * per).forEach(function (b) { row.appendChild(b); });
+      if (row.querySelector('.b-cur, .b-next')) row.classList.add('has-tags');
     });
-    if (s.next) setText(hub, '[data-dy="next"]', 'Next · ' + fmtShort(s.next.startDate));
   }
 
   /* Study opportunities: dates editors type ("Nov 12") drive the list.

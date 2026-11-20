@@ -260,8 +260,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
 }
 .dy-hub .legend-swatch.cur { box-shadow: 0 0 0 1.5px var(--dy-cyan); }
 .dy-hub .legend-swatch.next { border: 1.5px solid var(--dy-cyan); }
-.dy-hub .legend-swatch.done { background: linear-gradient(90deg, #3D1F2A 33%, #1D2936 33% 66%, #1F3527 66%); width: 14px; }
-.dy-hub .legend-swatch.soon { opacity: 0.4; }
+
 
 /* TEACHERS + SAGES */
 .dy-hub .scroll-row {
@@ -437,6 +436,20 @@ body:has(.dy-hub) .m-content__header { display: none; }
 @media (max-width: 600px) {
   .dy-hub .teacher-rows { grid-auto-columns: 200px; }
 }
+
+/* Plain-language key under the shelf (replaces the swatch legend) */
+.dy-hub .legend-note {
+  font-family: var(--dy-serif); font-style: italic; font-size: 17px; line-height: 1.45;
+  color: rgba(29,41,54,0.75); text-align: center; margin: 0.5rem auto 0.25rem; max-width: 34em;
+}
+/* Level the tags (the books are tilted) and spread them apart so they never collide */
+.dy-hub .flag-cur { background: var(--dy-navy); left: auto; right: -2px; transform: rotate(3deg); }
+.dy-hub .flag-next { left: -2px; transform: rotate(-8deg); transform-origin: bottom left; }
+.dy-hub .shelf-row.has-tags { margin-top: 30px; }
+@media (max-width: 600px) {
+  .dy-hub .next-flag { font-size: 9px; letter-spacing: 0.8px; padding: 3px 6px; top: -24px; }
+  .dy-hub .legend-note { font-size: 15px; }
+}
 </style>
 <!-- /wp:html -->
 
@@ -559,12 +572,7 @@ body:has(.dy-hub) .m-content__header { display: none; }
   <div class="shelf-row"></div><div class="shelf-floor"></div>
   <div class="shelf-row"></div><div class="shelf-floor"></div>
   <div class="shelf-row"></div><div class="shelf-floor"></div>
-  <div class="legend">
-    <span><span class="legend-swatch done"></span>Read</span>
-    <span><span class="legend-swatch cur"></span>Reading now</span>
-    <span><span class="legend-swatch next"></span><span data-dy="next">Next</span></span>
-    <span><span class="legend-swatch soon"></span>Upcoming</span>
-  </div>
+  <p class="legend-note">Full-color volumes are finished. Faded ones are still ahead. Tap one to see when it starts.</p>
 </div>
 <!-- /wp:html -->
 
@@ -1143,10 +1151,14 @@ body:has(.dy-hub) .m-content__header { display: none; }
       spine.className = 'book-spine';
       spine.textContent = t.name;
       a.appendChild(spine);
-      if (later) {
+      // Tags on the books themselves: "Reading now", "Next · Dec 22", and "Begins …" on tap
+      var tag = state === 'cur' ? 'Reading now'
+        : state === 'next' ? 'Next · ' + fmtShort(t.startDate)
+        : state === 'soon' ? 'Begins ' + fmtShort(t.startDate) : '';
+      if (tag) {
         var flag = document.createElement('span');
-        flag.className = state === 'next' ? 'next-flag' : 'next-flag date-flag';
-        flag.textContent = (state === 'next' ? '' : 'Begins ') + fmtShort(t.startDate);
+        flag.className = state === 'soon' ? 'next-flag date-flag' : 'next-flag flag-' + state;
+        flag.textContent = tag;
         a.appendChild(flag);
       }
       return a;
@@ -1155,8 +1167,8 @@ body:has(.dy-hub) .m-content__header { display: none; }
     Array.prototype.forEach.call(rows, function (row, i) {
       row.innerHTML = '';
       books.slice(i * per, (i + 1) * per).forEach(function (b) { row.appendChild(b); });
+      if (row.querySelector('.b-cur, .b-next')) row.classList.add('has-tags');
     });
-    if (s.next) setText(hub, '[data-dy="next"]', 'Next · ' + fmtShort(s.next.startDate));
   }
 
   /* Study opportunities: dates editors type ("Nov 12") drive the list.
